@@ -106,7 +106,7 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.3 }}
             >
-              Rockbridge
+              Tech Tycoon
             </motion.span>
             <motion.span
               className="hidden sm:inline-block text-xs text-gray-500 dark:text-gray-400 font-medium leading-tight pr-2"
@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.3 }}
             >
-              Digital Solutions
+              Digital Solutions LLP
             </motion.span>
           </div>
         </Link>
