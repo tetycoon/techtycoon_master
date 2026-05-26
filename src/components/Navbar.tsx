@@ -123,9 +123,9 @@ const Navbar: React.FC = () => {
         <ul className="hidden md:flex items-center gap-6">
           <NavItem to="/" label="Home" isActive={isActive('/')} />
           <NavItem to="/services" label="Services" isActive={isActive('/services')} />
-          <NavItem to="/courses" label="Courses" isActive={isActive('/courses')} />
           <NavItem to="/newsletter" label="Workshop" isActive={isActive('/newsletter')} />
           <NavItem to="/about" label="About" isActive={isActive('/about')} />
+          <NavItem to="/profile" label="Profile" isActive={isActive('/profile')} />
 
           {/* Enhanced theme toggle with animation wrapper */}
           <motion.li
@@ -139,10 +139,10 @@ const Navbar: React.FC = () => {
           <motion.li
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.3 }}
+            transition={{ delay: 0.55, duration: 0.3 }}
           >
             <a
-              href="https://drive.google.com/file/d/1bEgOy1ia2OQ93uEQ5zqfhGFECWcIKMN4/view?usp=drive_link"
+              href="https://aitycoon.in/"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group"
@@ -151,7 +151,7 @@ const Navbar: React.FC = () => {
               <span className="relative px-6 py-2 bg-blue-500/10 dark:bg-blue-600/20 backdrop-blur-xl border border-blue-500/30 dark:border-blue-400/30 text-blue-700 dark:text-blue-100 font-medium rounded-xl inline-flex items-center shadow-lg transition-all duration-300 text-sm group-hover:bg-blue-500/20 dark:group-hover:bg-blue-600/30">
                 <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-400/10 via-transparent to-transparent opacity-50"></span>
                 <span className="relative flex items-center gap-2">
-                  Profile
+                  Courses
                   <motion.svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-4 w-4"
@@ -172,6 +172,7 @@ const Navbar: React.FC = () => {
               </span>
             </a>
           </motion.li>
+
         </ul>
 
         {/* Mobile Menu Button and Theme Toggle */}
@@ -253,42 +254,23 @@ const Navbar: React.FC = () => {
                   isActive={isActive('/services')}
                   onClick={() => setIsOpen(false)}
                 />
-                <MobileNavItem
-                  to="/courses"
-                  label="Courses"
-                  isActive={isActive('/courses')}
-                  onClick={() => setIsOpen(false)}
-                />
-                <MobileNavItem
-                  to="/newsletter"
-                  label="Workshop"
-                  isActive={isActive('/newsletter')}
-                  onClick={() => setIsOpen(false)}
-                />
-                <MobileNavItem
-                  to="/about"
-                  label="About"
-                  isActive={isActive('/about')}
-                  onClick={() => setIsOpen(false)}
-                />
                 <motion.li
-                  className="pt-3"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.3 }}
+                  transition={{ delay: 0.1, duration: 0.3 }}
                 >
                   <a
-                    href="https://drive.google.com/file/d/1ENCZa2-7Ig40ppsCtMX-vjZI066E09tv/view?usp=sharing"
+                    href="https://aitycoon.in/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative group block w-full"
+                    className="relative group block w-full mb-3"
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl blur opacity-40 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
                     <span className="relative block w-full p-3 bg-blue-500/10 dark:bg-blue-600/20 backdrop-blur-xl border border-blue-500/30 dark:border-blue-400/30 text-blue-700 dark:text-blue-100 font-medium rounded-xl text-center shadow-lg transition-all duration-300 group-hover:bg-blue-500/20 dark:group-hover:bg-blue-600/30">
                       <span className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-400/10 via-transparent to-transparent opacity-50"></span>
                       <span className="relative flex items-center justify-center gap-2">
-                        <span>Profile</span>
+                        <span>Courses</span>
                         <motion.svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-4 w-4"
@@ -309,6 +291,24 @@ const Navbar: React.FC = () => {
                     </span>
                   </a>
                 </motion.li>
+                <MobileNavItem
+                  to="/newsletter"
+                  label="Workshop"
+                  isActive={isActive('/newsletter')}
+                  onClick={() => setIsOpen(false)}
+                />
+                <MobileNavItem
+                  to="/about"
+                  label="About"
+                  isActive={isActive('/about')}
+                  onClick={() => setIsOpen(false)}
+                />
+                <MobileNavItem
+                  to="/profile"
+                  label="Profile"
+                  isActive={isActive('/profile')}
+                  onClick={() => setIsOpen(false)}
+                />
               </ul>
             </div>
           </motion.div>
@@ -319,35 +319,48 @@ const Navbar: React.FC = () => {
 };
 
 // Desktop navigation item component with enhanced animation
-const NavItem: React.FC<{ to: string; label: string; isActive: boolean }> = ({
+const NavItem: React.FC<{ to: string; label: string; isActive: boolean; isExternal?: boolean }> = ({
   to,
   label,
-  isActive
+  isActive,
+  isExternal = false
 }) => (
   <motion.li
     initial={{ opacity: 0, y: -10 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{
-      delay: 0.1 * ["Home", "Services", "Courses", "About"].indexOf(label) + 0.1,
+      delay: 0.1 * ["Home", "Services", "Workshop", "About", "Profile"].indexOf(label) + 0.1,
       duration: 0.3
     }}
   >
-    <Link
-      to={to}
-      className={`relative px-1 py-1.5 font-medium text-sm transition-colors duration-300 group ${isActive
-        ? 'text-primary-500 dark:text-primary-400'
-        : 'text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400'
-        }`}
-    >
-      <span className="relative z-10 pr-1">{label}</span>
-      {isActive && (
-        <motion.span
-          className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"
-          layoutId="navbar-active-indicator"
-          transition={{ type: 'spring', stiffness: 350, damping: 35 }}
-        />
-      )}
-    </Link>
+    {isExternal ? (
+      <a
+        href={to}
+        className={`relative px-1 py-1.5 font-medium text-sm transition-colors duration-300 group ${isActive
+          ? 'text-primary-500 dark:text-primary-400'
+          : 'text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400'
+          }`}
+      >
+        <span className="relative z-10 pr-1">{label}</span>
+      </a>
+    ) : (
+      <Link
+        to={to}
+        className={`relative px-1 py-1.5 font-medium text-sm transition-colors duration-300 group ${isActive
+          ? 'text-primary-500 dark:text-primary-400'
+          : 'text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400'
+          }`}
+      >
+        <span className="relative z-10 pr-1">{label}</span>
+        {isActive && (
+          <motion.span
+            className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"
+            layoutId="navbar-active-indicator"
+            transition={{ type: 'spring', stiffness: 350, damping: 35 }}
+          />
+        )}
+      </Link>
+    )}
   </motion.li>
 );
 
@@ -357,11 +370,13 @@ const MobileNavItem: React.FC<{
   label: string;
   isActive: boolean;
   onClick: () => void;
+  isExternal?: boolean;
 }> = ({
   to,
   label,
   isActive,
-  onClick
+  onClick,
+  isExternal = false
 }) => (
     <motion.li
       initial={{ opacity: 0, x: -20 }}
@@ -370,27 +385,40 @@ const MobileNavItem: React.FC<{
       transition={{ duration: 0.2 }}
       className="w-full"
     >
-      <Link
-        to={to}
-        onClick={onClick}
-        className={`block relative w-full py-3 px-4 rounded-lg ${isActive
-          ? 'text-white bg-gradient-to-r from-primary-500/90 to-secondary-500/90'
-          : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50'
-          } transition-all duration-200`}
-      >
-        <span className="text-base font-medium pr-2">{label}</span>
+      {isExternal ? (
+        <a
+          href={to}
+          onClick={onClick}
+          className={`block relative w-full py-3 px-4 rounded-lg ${isActive
+            ? 'text-white bg-gradient-to-r from-primary-500/90 to-secondary-500/90'
+            : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50'
+            } transition-all duration-200`}
+        >
+          <span className="text-base font-medium pr-2">{label}</span>
+        </a>
+      ) : (
+        <Link
+          to={to}
+          onClick={onClick}
+          className={`block relative w-full py-3 px-4 rounded-lg ${isActive
+            ? 'text-white bg-gradient-to-r from-primary-500/90 to-secondary-500/90'
+            : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50'
+            } transition-all duration-200`}
+        >
+          <span className="text-base font-medium pr-2">{label}</span>
 
-        {isActive && (
-          <motion.span
-            layoutId="mobile-nav-indicator"
-            className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary-500/90 to-secondary-500/90 -z-10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-          />
-        )}
-      </Link>
+          {isActive && (
+            <motion.span
+              layoutId="mobile-nav-indicator"
+              className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary-500/90 to-secondary-500/90 -z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            />
+          )}
+        </Link>
+      )}
     </motion.li>
   );
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 import GetInTouchModal from '../components/GetInTouchModal';
@@ -25,6 +26,12 @@ import keralaImg1 from '../assets/Newsletter/training at kerala/WhatsApp Image 2
 import mmaImg1 from '../assets/Newsletter/cofacilaor at MMA/WhatsApp Image 2025-05-23 at 18.50.22_0673c820.jpg';
 import vitImg1 from '../assets/Newsletter/VIT/IMG_1252.jpg';
 import periyarImg1 from '../assets/Newsletter/periyar college/IMG_3609.jpg';
+import maxwellImg1 from '../assets/Newsletter/Maxwell Centre/maxwell_workshop.png';
+import vestinImg1 from '../assets/Newsletter/Vestin Park/vestin_park_training.png';
+import madrasImg1 from '../assets/Newsletter/Madras University/madras_university_training.png';
+import loyolaImg1 from '../assets/Newsletter/St Loyola/cybersecurity_training.png';
+import leylandImg1 from '../assets/Newsletter/Ashok Leyland/ashok_leyland_training.png';
+import hindustanImg1 from '../assets/Newsletter/Hindustan/hindustan1.jpg';
 
 interface CollegeActivity {
   id: number;
@@ -38,6 +45,209 @@ interface CollegeActivity {
 }
 
 const collegeActivities: CollegeActivity[] = [
+  {
+    id: 15,
+    college: "Ashok Leyland",
+    title: "AI Multiplier in Manufacturing: A Strategic Corporate Workshop",
+    date: "April 16 - 17, 2026",
+    description: (
+      <>
+        <p className="mb-4">
+          I walked into <strong>Ashok Leyland in Hosur</strong> expecting to teach AI, but what I didn’t expect was the profound shift in mindset I would witness. Over two intense days with two batches of 25+ participants, we didn't just talk about AI—we used it to solve real workplace challenges.
+        </p>
+        <p className="mb-4">
+          From 9 AM to 5 PM, we explored how <strong>Microsoft Copilot</strong> can act as a force multiplier. Participants saw firsthand how to turn rough ideas into professional emails and build impactful presentations in minutes, significantly reducing effort while improving output quality.
+        </p>
+        <div className="mb-4">
+          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">🚀 Workshop Impact:</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong>Thinking First:</strong> Moving from "how to use a tool" to "how to think with AI."</li>
+            <li><strong>Real-time Results:</strong> Implementing Copilot workflows on actual daily tasks.</li>
+            <li><strong>Efficiency Multiplier:</strong> Demonstrating how to achieve more with significantly less effort.</li>
+            <li><strong>Manufacturing 4.0:</strong> Preparing the workforce for the evolving digital landscape of manufacturing.</li>
+          </ul>
+        </div>
+        <p className="mb-4">
+          At first, there was hesitation: <em>"Can AI really help in my daily job?"</em> By the end, that question disappeared. They saw it working. In real time. On their own tasks.
+        </p>
+        <p>
+          The biggest shift? People realizing their own potential when empowered with the right tools. The future of manufacturing is not about the tools we have, but how ready we are to use them properly.
+        </p>
+      </>
+    ),
+    images: [leylandImg1],
+    location: "Ashok Leyland, Hosur",
+    participants: "25+ Corporate Professionals (Two Batches)"
+  },
+  {
+    id: 11,
+    college: "Maxwell Centre",
+    title: "Leadership in the Era of AI: A Strategic Workshop",
+    date: "January 23, 2026",
+    description: (
+      <>
+        <p className="mb-4">
+          Some moments in a career arrive quietly—but leave a lasting mark. January 23rd, 2026, was one such defining moment. I had the privilege of leading an exclusive executive workshop hosted by the <strong>Maxwell Centre for Industrial Training & Development</strong>, engaging a group of 10 senior corporate decision-makers from four diverse organizations.
+        </p>
+        <p className="mb-4">
+          These were leaders responsible for the very pillars of their companies: strategy, people, and digital transformation. Our focus was intensely practical, moving beyond the hype to address core challenges:
+        </p>
+        <div className="mb-4">
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong>Reshaping Industries:</strong> How AI is fundamentally altering leadership paradigms.</li>
+            <li><strong>Hands-on Productivity:</strong> Mastering prompt engineering for immediate corporate results.</li>
+            <li><strong>Custom AI Agents:</strong> Tailoring intelligent workflows for specific business needs.</li>
+            <li><strong>Ethics & Responsibility:</strong> Navigating the critical role of responsible AI adoption.</li>
+          </ul>
+        </div>
+        <p className="mb-4">
+          What stood out most was the quality of the dialogue. These leaders weren’t just curious about AI—they were deeply committed to using it thoughtfully, ethically, and strategically. It reinforced a core belief I hold: while technology may evolve at breakneck speed, it is <strong>responsible leadership</strong> that truly shapes the future.
+        </p>
+        <p>
+          Grateful for the trust, the deep conversations, and the opportunity to contribute where it matters most.
+        </p>
+      </>
+    ),
+    images: [maxwellImg1],
+    location: "Maxwell Centre for Industrial Training & Development",
+    participants: "10 senior corporate decision-makers"
+  },
+  {
+    id: 16,
+    college: "Hindustan University",
+    title: "AI & Automation: The New Frontier in Digital Marketing",
+    date: "January 22, 2026",
+    description: (
+      <>
+        <p className="mb-4">
+          100 students. One room. Three hours that changed everything. Yesterday at <strong>Hindustan University</strong>, I walked into what I thought would be a routine workshop on the <em>"Role of AI and Automation in Digital Marketing."</em> I was quickly proven wrong by a generation that doesn't just "get" technology—they are ready to disrupt it.
+        </p>
+        <p className="mb-4">
+          The moment that defined the session occurred just 15 minutes in, when a student asked: <strong>"If AI can write better copy than humans, what's our competitive advantage?"</strong> The room went silent, but the answer became the cornerstone of our discussion: AI isn't a competitor; it's a colleague.
+        </p>
+        <div className="mb-4">
+          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">💡 Core Shifts We Explored:</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong>The Exceptional Marketer:</strong> AI won't replace marketers; it will separate the average from the exceptional.</li>
+            <li><strong>Reclaiming Humanity:</strong> Automation doesn't remove the human touch—it gives us the time to <em>be</em> more human.</li>
+            <li><strong>Experience Engineering:</strong> Digital marketing has evolved from "posting content" to "engineering experiences."</li>
+            <li><strong>Ethical Mastery:</strong> Navigating the critical balance between AI efficiency and human creativity.</li>
+          </ul>
+        </div>
+        <p className="mb-4">
+          What hit me hardest was realizing that these 100 students are the first generation to grow up with AI as a teammate. While many are still debating <em>whether</em> to use these tools, they are already asking <em>how</em> to use them ethically and strategically to remain irreplaceable.
+        </p>
+        <p>
+          The disruption isn't coming—it's already here, sitting in college classrooms and asking the uncomfortable questions that will shape the future of our industry.
+        </p>
+      </>
+    ),
+    images: [hindustanImg1],
+    location: "Hindustan University, Chennai",
+    participants: "100 Digital Marketing Students"
+  },
+  {
+    id: 12,
+    college: "Vestin Park Hotel",
+    title: "Scaling the Public Stage: A Milestone in My AI Journey",
+    date: "January 11, 2026",
+    description: (
+      <>
+        <p className="mb-4">
+          Some days don’t just pass—they mark you for life. January 11th, 2026, was one such day. Standing in front of a room filled with trainers, coaches, facilitators, and entrepreneurs at the <strong>Vestin Park Hotel, Egmore</strong>, I felt a rush of emotions that words can barely hold: excitement, gratitude, and a quiet inner voice saying, <em>"This is where you belong."</em>
+        </p>
+        <p className="mb-4">
+          This was my first public training program in this format, and the energy in the room was electric. We brought together 20 powerful participants—20 curious minds ready to grow. Our mission was to bind <strong>Marketing and AI</strong> together, not just in theory, but practically, strategically, and purposefully.
+        </p>
+        <p className="mb-4">
+          A highlight of the session was a special guest segment on sales tactics by master trainer <strong>Mr. Yaseen</strong>. Watching him decode the psychology and real-world wisdom of sales with such clarity was a masterclass in itself—a reminder that experience, when shared with intent, becomes a lasting legacy.
+        </p>
+        <div className="mb-4">
+          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">🎯 Specialized Training for Trainers:</h4>
+          <p>
+            We take pride in conducting specialized sessions specifically designed for <strong>trainers, facilitators, and educators</strong>. These programs go beyond the basics, focusing on pedagogical excellence and the strategic integration of AI into teaching and coaching workflows.
+          </p>
+        </div>
+        <p className="mb-4">
+          As the session progressed, I realized that this wasn’t just a program; it was a perfect alignment of vision and execution. I am deeply thankful for the strength to step forward, the courage to lead, and the individuals who trusted me with their time and attention.
+        </p>
+        <p>
+          Grateful for every participant who showed up with openness. This is just the beginning, and my heart is full.
+        </p>
+      </>
+    ),
+    images: [vestinImg1],
+    location: "Vestin Park Hotel, Egmore, Chennai",
+    participants: "20 Trainers, Coaches, and Entrepreneurs"
+  },
+  {
+    id: 13,
+    college: "University of Madras",
+    title: "Future-Readiness for 150 Educators: A Strategic Mindset Shift",
+    date: "January 3 - 9, 2026",
+    description: (
+      <>
+        <p className="mb-4">
+          Six days. 150 Professors. One powerful shift in mindset. On Day One, the room was filled with decades of teaching wisdom and one silent question: <em>"Where does Artificial Intelligence fit into my role as an educator?"</em> By Day Six, that question had transformed into an eager, <strong>"How fast can I implement this?"</strong>
+        </p>
+        <p className="mb-4">
+          Alongside fellow trainers <strong>Mr. Saibabu and Ms. Jayanthi</strong>, we worked with 150 professors from various institutions under Madras University. What unfolded was not just a training program—it was a collective reinvention of teaching. Every day was charged with breakthrough moments as confidence replaced confusion.
+        </p>
+        <div className="mb-4">
+          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">🎓 Key Transformation Pillars:</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong>Teaching Effectiveness:</strong> Enhancing classroom engagement with AI-driven insights.</li>
+            <li><strong>Workload Optimization:</strong> Reducing academic administrative burden through smart automation.</li>
+            <li><strong>Research Productivity:</strong> Elevating research capabilities with advanced AI tools.</li>
+            <li><strong>Leadership:</strong> Positioning educators as pioneers in the AI-driven future of education.</li>
+          </ul>
+        </div>
+        <p className="mb-4">
+          What inspired me most was their unlearning and relearning mindset. No resistance, no fear—only a deep commitment to growth. When educators upgrade their thinking, generations upgrade their future. This experience was about empowerment and proving that learning never expires.
+        </p>
+        <p>
+          Grateful for the synergy and the incredible energy shared by every professor in that room. The future of education is already here.
+        </p>
+      </>
+    ),
+    images: [madrasImg1],
+    location: "University of Madras, Chennai",
+    participants: "150 College Professors & Researchers"
+  },
+  {
+    id: 14,
+    college: "St. Loyola Institute of Technology",
+    title: "Cybersecurity in the AI Era: Defending the Digital Frontier",
+    date: "December 3 - 9, 2025",
+    description: (
+      <>
+        <p className="mb-4">
+          Imagine a room full of 35 eager engineering students, all curious about how AI and cybersecurity intertwine in today's complex tech landscape. That was the scene at 8 AM on a Monday morning at <strong>St. Loyola Institute of Technology, Poonamallee</strong>. For the next six days, we embarked on a deep dive into the world of digital defense.
+        </p>
+        <p className="mb-4">
+          Throughout the week, we moved beyond theory to explore <strong>real-world hacking scenarios</strong>, analyzing how AI acts as both a powerful tool and a sophisticated challenge in modern cybersecurity. It was incredible to see the students connect the dots between theoretical concepts and the practical application of protecting data in an AI-driven world.
+        </p>
+        <div className="mb-4">
+          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">🛡️ Program Highlights:</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong>AI-Driven Defense:</strong> Leveraging machine learning for proactive threat detection.</li>
+            <li><strong>Hacking Scenarios:</strong> Analyzing modern attack vectors and defensive countermeasures.</li>
+            <li><strong>Hands-on Labs:</strong> Practical exercises in securing networks and data infrastructure.</li>
+            <li><strong>Future Outlook:</strong> Navigating the evolving role of AI in the cybersecurity ecosystem.</li>
+          </ul>
+        </div>
+        <p className="mb-4">
+          By the end of the program, the feedback from the students was truly heartwarming. Seeing them grow in confidence and skill reminds me of why I am so passionate about this mission—helping the next generation navigate and lead in the ever-evolving tech space.
+        </p>
+        <p>
+          This experience was a powerful reminder that learning is a continuous journey, and I'm excited to keep sharing this knowledge and growing along with everyone involved.
+        </p>
+      </>
+    ),
+    images: [loyolaImg1],
+    location: "St. Loyola Institute of Technology, Chennai",
+    participants: "35 Engineering Students"
+  },
   {
     id: 10,
     college: "AON",
@@ -182,41 +392,6 @@ const collegeActivities: CollegeActivity[] = [
     participants: "Heads of 12 departments"
   },
   {
-    id: 3,
-    college: "Rathinam College",
-    title: "DM WITH AI: EMPOWERING FUTURE MARKETERS",
-    date: "January 13, 2025",
-    description: (
-      <>
-        <p className="mb-4">
-          We are excited to share the successful completion of a five-day seminar on Digital Marketing with Artificial
-          Intelligence (DM with AI), conducted for the enthusiastic students of Rathinam College, Coimbatore.
-        </p>
-        <p className="mb-4">
-          The session welcomed over 60+ participants who were eager to explore the evolving landscape of digital marketing.
-          While the original topic focused on digital marketing fundamentals, the program was thoughtfully upgraded to
-          incorporate Artificial Intelligence (AI)—reflecting the current market trends and future demands of the industry.
-        </p>
-        <div className="mb-4">
-          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">🎓 What the Seminar Covered:</h4>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Foundations of Digital Marketing: SEO, social media, email marketing, and content strategy</li>
-            <li>AI-Powered Tools and Trends: Smart automation, customer analytics, AI-generated content</li>
-            <li>Real-World Applications: Case studies and examples of AI enhancing marketing strategies</li>
-            <li>Hands-on Demonstrations: Practical exposure to tools that marketers use today</li>
-          </ul>
-        </div>
-        <p>
-          The engagement, energy, and curiosity of the students made it an awesome and memorable experience.
-          Their openness to innovation and digital transformation was truly inspiring.
-        </p>
-      </>
-    ),
-    images: [rathinamImg1, rathinamImg2, rathinamImg3],
-    location: "Rathinam College, Coimbatore",
-    participants: "60+ marketing students"
-  },
-  {
     id: 2,
     college: "Simpson Company",
     title: "AI-POWERED ADVANCED POWERPOINT TRAINING",
@@ -302,6 +477,41 @@ const collegeActivities: CollegeActivity[] = [
     images: [tagroeImg1, tagroeImg2, tagroeImg3],
     location: "Tagore Medical College, Chennai",
     participants: "70 dental students"
+  },
+  {
+    id: 3,
+    college: "Rathinam College",
+    title: "DM WITH AI: EMPOWERING FUTURE MARKETERS",
+    date: "January 13, 2025",
+    description: (
+      <>
+        <p className="mb-4">
+          We are excited to share the successful completion of a five-day seminar on Digital Marketing with Artificial
+          Intelligence (DM with AI), conducted for the enthusiastic students of Rathinam College, Coimbatore.
+        </p>
+        <p className="mb-4">
+          The session welcomed over 60+ participants who were eager to explore the evolving landscape of digital marketing.
+          While the original topic focused on digital marketing fundamentals, the program was thoughtfully upgraded to
+          incorporate Artificial Intelligence (AI)—reflecting the current market trends and future demands of the industry.
+        </p>
+        <div className="mb-4">
+          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">🎓 What the Seminar Covered:</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Foundations of Digital Marketing: SEO, social media, email marketing, and content strategy</li>
+            <li>AI-Powered Tools and Trends: Smart automation, customer analytics, AI-generated content</li>
+            <li>Real-World Applications: Case studies and examples of AI enhancing marketing strategies</li>
+            <li>Hands-on Demonstrations: Practical exposure to tools that marketers use today</li>
+          </ul>
+        </div>
+        <p>
+          The engagement, energy, and curiosity of the students made it an awesome and memorable experience.
+          Their openness to innovation and digital transformation was truly inspiring.
+        </p>
+      </>
+    ),
+    images: [rathinamImg1, rathinamImg2, rathinamImg3],
+    location: "Rathinam College, Coimbatore",
+    participants: "60+ marketing students"
   }
 ];
 
@@ -363,51 +573,94 @@ const Newsletter: React.FC = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <Helmet>
+        <title>AI Workshops & Corporate Training | Tech Tycoon Outreach</title>
+        <meta name="description" content="Explore high-impact AI workshops conducted at prestigious institutions like Madras University, Ashok Leyland, and VIT. Hands-on training for the next generation." />
+      </Helmet>
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-200/30 dark:bg-blue-800/20 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-purple-200/20 dark:bg-purple-800/10 rounded-full filter blur-3xl"></div>
+        {/* Animated Gradient Blobs */}
+        <motion.div 
+          animate={{ 
+            x: [0, 100, 0], 
+            y: [0, 50, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/4 right-[-10%] w-[500px] h-[500px] bg-blue-400/20 dark:bg-blue-600/10 rounded-full filter blur-[120px]"
+        ></motion.div>
+        <motion.div 
+          animate={{ 
+            x: [0, -120, 0], 
+            y: [0, 80, 0],
+            scale: [1, 1.3, 1]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-1/4 left-[-10%] w-[600px] h-[600px] bg-purple-400/10 dark:bg-purple-600/5 rounded-full filter blur-[120px]"
+        ></motion.div>
+        <motion.div 
+          animate={{ 
+            x: [0, 50, 0], 
+            y: [0, -100, 0]
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-indigo-300/15 dark:bg-indigo-500/5 rounded-full filter blur-[100px]"
+        ></motion.div>
 
         {/* Subtle grid pattern */}
         <div
-          className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
           style={{
             backgroundImage: `radial-gradient(#3b82f6 1px, transparent 1px)`,
-            backgroundSize: '30px 30px'
+            backgroundSize: '40px 40px'
           }}
         ></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 relative z-10">
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="inline-block px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-3">
-            Tech Tycoon Digital Solution LLP Outreach
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            WorkShops at Colleges & Corporates
+          <motion.span 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="inline-block px-4 py-1.5 rounded-full bg-blue-100/50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4 backdrop-blur-md border border-blue-200/50 dark:border-blue-800/50"
+          >
+            🚀 Tech Tycoon Outreach
+          </motion.span>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-6 tracking-tight">
+            Workshops at <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Colleges & Corporates</span>
           </h1>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Empowering the next generation through educational workshops and training programs across colleges and corporates in India.
+          <motion.div 
+            initial={{ width: 0 }}
+            animate={{ width: 80 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="h-1.5 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 rounded-full"
+          ></motion.div>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
+            Empowering the next generation of leaders and professionals through high-impact 
+            educational workshops and advanced AI training programs across India.
           </p>
         </motion.div>
 
         {/* College Activities */}
-        <div className="space-y-20">
+        <div className="relative max-w-7xl mx-auto space-y-16">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-[54.5%] top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-blue-500/50 hidden lg:block"></div>
           {collegeActivities.map((activity, index) => (
             <motion.div
               key={activity.id}
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700"
+              className="group bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl border border-white/20 dark:border-gray-700/50 hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2"
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, delay: index % 3 * 0.1 }}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr]">
                 {/* Images Section */}
                 <div
                   className="relative h-80 lg:h-auto overflow-hidden cursor-pointer"

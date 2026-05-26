@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, memo, useMemo } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence, MotionValue, Variants, TargetAndTransition, ValueKeyframesDefinition, AnimationControls } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import Hero from '../components/Hero';
-import CourseHighlights from '../components/CourseHighlights';
 import Testimonials from '../components/Testimonials';
 // import Faq from '../components/Faq';
 import Footer from '../components/Footer';
@@ -401,6 +401,10 @@ const Home: React.FC = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
+      <Helmet>
+        <title>Rockbridge | Advanced AI Marketing & Strategic Business Growth</title>
+        <meta name="description" content="Scale your business with AI-driven marketing, strategic consulting, and premium digital masterclasses. Join 5000+ professionals trained by Tech Tycoon." />
+      </Helmet>
       <div className="home-hero">
         {/* Particles background */}
         <motion.div
@@ -639,7 +643,7 @@ const Home: React.FC = () => {
                     className="leading-relaxed"
                   >
                     As the founder of Tech Tycoon Digital Solution LLP, I am passionate about empowering
-                    businesses and individuals to unlock their potential in the digital world. With over 4 years of
+                    businesses and individuals to unlock their potential in the digital world. With over 3 years of
                     experience in digital marketing, content creation, and training, my journey has been
                     shaped by a commitment to excellence and innovation.
                   </motion.p>
@@ -707,8 +711,7 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        {/* Course highlights with premium animations */}
-        <CourseHighlights />
+
 
         {/* Premium testimonials section */}
         <Testimonials />
@@ -716,12 +719,9 @@ const Home: React.FC = () => {
         {/* FAQ section with premium accordions */}
 
 
-        {/* Footer */}
-        <Footer />
       </motion.div>
-
     </motion.main>
   );
 };
 
-export default Home; 
+export default memo(Home);

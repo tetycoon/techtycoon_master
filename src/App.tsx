@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 import logo from './assets/logo.png';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import applyPerformanceOptimizations from './performance';
 
 // Components
@@ -18,8 +16,6 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
 import PricingDemo from './pages/PricingDemo';
-import Courses from './pages/Courses';
-import CourseDetails from './pages/CourseDetails';
 import FaqPage from './pages/Faq';
 import PaymentTest from './pages/PaymentTest';
 import ServiceDetail from './pages/ServiceDetail';
@@ -136,19 +132,13 @@ const HomeLazy = lazy(() => import('./pages/Home'));
 const AboutLazy = lazy(() => import('./pages/About'));
 const ServicesLazy = lazy(() => import('./pages/Services'));
 const ServiceDetailLazy = lazy(() => import('./pages/ServiceDetail'));
-const CoursesLazy = lazy(() => import('./pages/Courses'));
-const CourseDetailsLazy = lazy(() => import('./pages/CourseDetails'));
 const NewsletterLazy = lazy(() => import('./pages/Newsletter'));
+const ProfileLazy = lazy(() => import('./pages/Profile'));
 
 // Custom component to conditionally render WhatsAppButton
 const ConditionalWhatsAppButton = () => {
   const location = useLocation();
   const path = location.pathname;
-
-  // Don't show WhatsApp button on courses or course details pages
-  if (path === '/courses' || path.startsWith('/courses/')) {
-    return null;
-  }
 
   return <WhatsAppButton />;
 };
@@ -169,13 +159,12 @@ function AppContent() {
     <Router>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
-        <Navbar />
         <Suspense fallback={<LoadingFallback />}>
           <main className="flex-grow">
             <Routes>
               {/* Home page - special case with no footer */}
               <Route path="/" element={
-                <Layout includeFooter={false}>
+                <Layout>
                   <motion.div
                     initial="initial"
                     animate="animate"
@@ -238,34 +227,6 @@ function AppContent() {
                 >
                   <PricingDemo />
                 </motion.div>
-              } />
-
-              {/* Courses page */}
-              <Route path="/courses" element={
-                <Layout>
-                  <motion.div
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={pageVariants}
-                  >
-                    <CoursesLazy />
-                  </motion.div>
-                </Layout>
-              } />
-
-              {/* Course Details page */}
-              <Route path="/courses/:courseId" element={
-                <Layout>
-                  <motion.div
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    variants={pageVariants}
-                  >
-                    <CourseDetailsLazy />
-                  </motion.div>
-                </Layout>
               } />
 
               {/* FAQ page */}
@@ -348,6 +309,19 @@ function AppContent() {
                     variants={pageVariants}
                   >
                     <CookiePolicy />
+                  </motion.div>
+                </Layout>
+              } />
+
+              <Route path="/profile" element={
+                <Layout>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={pageVariants}
+                  >
+                    <ProfileLazy />
                   </motion.div>
                 </Layout>
               } />

@@ -10,9 +10,11 @@ import strategicConsultingImg from '../assets/strategic-consulting-placeholder.j
 
 // Blue text effect with enhanced animation
 const GradientText: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => (
-  <span className={`relative text-blue-600 animate-pulse-slow ${className}`}>
-    {children}
-    <span className="absolute inset-0 text-blue-500 blur-sm opacity-50 animate-pulse">
+  <span className={`relative inline-block ${className}`}>
+    <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-blue-400 bg-[length:200%_auto] animate-shimmer">
+      {children}
+    </span>
+    <span className="absolute inset-0 text-blue-500 blur-xl opacity-40 animate-pulse-slow select-none pointer-events-none">
       {children}
     </span>
   </span>
@@ -310,16 +312,35 @@ const Hero: React.FC = () => {
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-blue-800 via-blue-900 to-blue-950" ref={heroRef}>
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        {/* Animated gradient blob */}
-        <div className="absolute -top-[30%] -left-[10%] w-[70%] h-[70%] bg-blue-500/20 rounded-full blur-[120px] animate-pulse-slow"></div>
-        <div className="absolute -bottom-[30%] -right-[10%] w-[70%] h-[70%] bg-blue-400/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+        {/* Animated mesh gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-950 opacity-100"></div>
+        <motion.div 
+          animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 90, 0],
+            x: [0, 100, 0],
+            y: [0, 50, 0]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-[20%] -left-[10%] w-[80%] h-[80%] bg-blue-600/20 rounded-full blur-[120px]"
+        ></motion.div>
+        <motion.div 
+          animate={{ 
+            scale: [1.2, 1, 1.2],
+            rotate: [90, 0, 90],
+            x: [0, -100, 0],
+            y: [0, -50, 0]
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="absolute -bottom-[20%] -right-[10%] w-[80%] h-[80%] bg-purple-600/10 rounded-full blur-[120px]"
+        ></motion.div>
 
         {/* Subtle grid pattern */}
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
-            backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px)`,
-            backgroundSize: '30px 30px'
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
           }}
         ></div>
 

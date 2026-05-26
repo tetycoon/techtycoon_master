@@ -33,10 +33,12 @@ import img27 from '../assets/horizantalmotion/120.jpeg';
 import img28 from '../assets/horizantalmotion/121.jpeg';
 import img29 from '../assets/horizantalmotion/122.jpeg';
 import img30 from '../assets/horizantalmotion/123.jpeg';
+import img31 from '../assets/horizantalmotion/124.jpeg';
+import img32 from '../assets/horizantalmotion/125.jpeg';
 
 const images = [
   // Newly added assets first
-  img18, img19, img20, img21, img22, img23, img24, img25,
+  img32, img31, img18, img19, img20, img21, img22, img23, img24, img25,
   img26, img27, img28, img29, img30,
   // Original assets follow
   img1, img2, img3, img4, img5, img6, img7, img8, img9, 

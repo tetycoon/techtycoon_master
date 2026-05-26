@@ -15,6 +15,40 @@ export interface Service {
 // First row services
 export const firstRowServices: Service[] = [
   {
+    title: "Influencer Marketing",
+    description: "Connect with relevant influencers to amplify your brand message and reach new audiences through authentic partnerships.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ),
+    color: "from-violet-400 to-violet-600",
+    image: "https://images.unsplash.com/photo-1579869847514-7c1a19d2d2ad?q=80&w=2671&auto=format&fit=crop",
+    benefits: [
+      "Strategic influencer selection",
+      "Authentic content collaboration",
+      "Performance-based campaigns"
+    ],
+    slug: "influencer-marketing"
+  },
+  {
+    title: "Video Editing",
+    description: "Transform raw footage into compelling visual stories with professional video editing that captures your audience's attention.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+      </svg>
+    ),
+    color: "from-orange-400 to-orange-600",
+    image: VideoEditing,
+    benefits: [
+      "Professional color grading",
+      "Seamless transitions",
+      "Engaging special effects"
+    ],
+    slug: "video-editing"
+  },
+  {
     title: "SEO Optimization",
     description: "Leverage AI to analyze search patterns, optimize content, and improve your website's visibility across search engines.",
     icon: (
@@ -47,24 +81,11 @@ export const firstRowServices: Service[] = [
       "Detailed performance analytics"
     ],
     slug: "social-media-marketing"
-  },
-  {
-    title: "WhatsApp Marketing",
-    description: "Harness AI-powered WhatsApp marketing campaigns to engage customers with personalized messaging and automated responses.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-      </svg>
-    ),
-    color: "from-green-400 to-green-600",
-    image: WhatsAppMarketing,
-    benefits: [
-      "Automated customer interactions",
-      "Personalized messaging at scale",
-      "Chatbot integration for 24/7 support"
-    ],
-    slug: "whatsapp-marketing"
-  },
+  }
+];
+
+// Remaining services
+export const remainingServices: Service[] = [
   {
     title: "Social Media Optimization",
     description: "Optimize your social media presence to increase engagement, drive traffic, and improve conversion rates with data-driven strategies.",
@@ -81,11 +102,7 @@ export const firstRowServices: Service[] = [
       "Cross-platform content strategy"
     ],
     slug: "social-media-optimization"
-  }
-];
-
-// Remaining services
-export const remainingServices: Service[] = [
+  },
   {
     title: "Content Marketing",
     description: "Generate high-quality, SEO-optimized content with AI assistance that resonates with your target audience and drives conversions.",
@@ -172,23 +189,6 @@ export const remainingServices: Service[] = [
     slug: "website-development"
   },
   {
-    title: "Video Editing",
-    description: "Transform raw footage into compelling visual stories with professional video editing that captures your audience's attention.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-      </svg>
-    ),
-    color: "from-orange-400 to-orange-600",
-    image: VideoEditing,
-    benefits: [
-      "Professional color grading",
-      "Seamless transitions",
-      "Engaging special effects"
-    ],
-    slug: "video-editing"
-  },
-  {
     title: "Poster Designing",
     description: "Create eye-catching posters and visual assets that communicate your message effectively and leave a lasting impression.",
     icon: (
@@ -240,21 +240,21 @@ export const remainingServices: Service[] = [
     slug: "branding"
   },
   {
-    title: "Influencer Marketing",
-    description: "Connect with relevant influencers to amplify your brand message and reach new audiences through authentic partnerships.",
+    title: "WhatsApp Marketing",
+    description: "Harness AI-powered WhatsApp marketing campaigns to engage customers with personalized messaging and automated responses.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
       </svg>
     ),
-    color: "from-violet-400 to-violet-600",
-    image: "https://images.unsplash.com/photo-1579869847514-7c1a19d2d2ad?q=80&w=2671&auto=format&fit=crop",
+    color: "from-green-400 to-green-600",
+    image: WhatsAppMarketing,
     benefits: [
-      "Strategic influencer selection",
-      "Authentic content collaboration",
-      "Performance-based campaigns"
+      "Automated customer interactions",
+      "Personalized messaging at scale",
+      "Chatbot integration for 24/7 support"
     ],
-    slug: "influencer-marketing"
+    slug: "whatsapp-marketing"
   }
 ];
 

@@ -2,6 +2,9 @@ import React, { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import storyImg from '../assets/Antony_office.jpg';
+import trainingImg from '../assets/Newsletter/Hindustan/hindustan1.jpg';
 
 // Lazy load heavy components
 const ContactForm = lazy(() => import('../components/ContactForm'));
@@ -118,6 +121,10 @@ const About: React.FC = () => {
 
   return (
     <main className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <Helmet>
+        <title>Our Journey | Tech Tycoon Digital Solution LLP & Founder Antony Praveen</title>
+        <meta name="description" content="Discover how Tech Tycoon is revolutionizing digital education. Meet our founder Antony Praveen and learn about our mission to democratize AI for all." />
+      </Helmet>
       {/* Hero Section - Simplified */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/90 z-0"></div>
@@ -156,7 +163,7 @@ const About: React.FC = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
             >
-              With 6+ years of experience in digital marketing, we're building towards the official establishment of Tech Tycoon Digital Solution LLP in 2025, dedicated to making cutting-edge AI marketing tools and strategies accessible to everyone.
+              With 3+ years of experience in digital marketing, we're building towards the official establishment of Tech Tycoon Digital Solution LLP in 2025, dedicated to making cutting-edge AI marketing tools and strategies accessible to everyone.
             </motion.p>
 
             <motion.div
@@ -213,7 +220,7 @@ const About: React.FC = () => {
               viewport={{ once: true, margin: "-50px" }}
               variants={fadeInUp}
             >
-              With 6+ years of experience in digital marketing, we're building towards the official establishment of Tech Tycoon Digital Solution LLP in 2025, dedicated to making cutting-edge AI marketing tools and strategies accessible to everyone.
+              With 3+ years of experience in digital marketing, we're building towards the official establishment of Tech Tycoon Digital Solution LLP in 2025, dedicated to making cutting-edge AI marketing tools and strategies accessible to everyone.
             </motion.p>
           </div>
 
@@ -228,8 +235,8 @@ const About: React.FC = () => {
               >
                 <div className="overflow-hidden rounded-xl shadow-lg">
                   <img
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                    alt="Team collaboration"
+                    src={storyImg}
+                    alt="Antony Praveen - Founder & AI Trainer"
                     className="w-full h-full object-cover"
                     loading="lazy"
                     width="600"
@@ -246,7 +253,7 @@ const About: React.FC = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeInUp}
                 >
-                  Starting as a freelance consultant in 2018, our journey toward <span className="text-primary-500 dark:text-primary-400 font-semibold">Tech Tycoon</span> began with a vision to make AI marketing tools accessible to everyone.
+                  Starting as a freelance consultant in 2023, our journey toward <span className="text-primary-500 dark:text-primary-400 font-semibold">Tech Tycoon</span> began with a vision to make AI marketing tools accessible to everyone.
                 </motion.p>
 
                 <motion.p
@@ -291,7 +298,7 @@ const About: React.FC = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeInUp}
                 >
-                  Since 2021, we've been passionate about democratizing AI education through comprehensive workshops and training programs. Our mission is to bridge the gap between complex AI technology and everyday business applications.
+                  Since 2023, we've been passionate about democratizing AI education through comprehensive workshops and training programs. Our mission is to bridge the gap between complex AI technology and everyday business applications.
                 </motion.p>
 
                 <motion.p
@@ -324,8 +331,8 @@ const About: React.FC = () => {
               >
                 <div className="overflow-hidden rounded-xl shadow-lg">
                   <img
-                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                    alt="Training and Workshop"
+                    src={trainingImg}
+                    alt="Hindustan University Workshop"
                     className="w-full h-full object-cover"
                     loading="lazy"
                     width="600"
@@ -343,19 +350,9 @@ const About: React.FC = () => {
 
               {[
                 {
-                  year: "2021",
+                  year: "2023",
                   title: "Started with Marketing and courses",
                   description: "Started with digital marketing and online courses as a freelance consultant."
-                },
-                {
-                  year: "2022",
-                  title: "client grew with our services",
-                  description: "Expanded client base significantly and began developing specialized training programs."
-                },
-                {
-                  year: "2023",
-                  title: "Offline & Online Training",
-                  description: "Launched comprehensive training programs in both offline and online formats, reaching hundreds of businesses."
                 },
                 {
                   year: "2024",
@@ -366,6 +363,11 @@ const About: React.FC = () => {
                   year: "2025",
                   title: "Tech Tycoon Digital Solution LLP Founded",
                   description: "Officially established Tech Tycoon Digital Solution LLP as a company offering multiple AI-powered digital services."
+                },
+                {
+                  year: "2026",
+                  title: "Strategic Outreach & Corporate Training",
+                  description: "Expanded our impact through high-impact workshops at major corporations like Ashok Leyland and prestigious institutions like Madras University, reaching over 5000+ professionals and students."
                 }
               ].map((milestone, index) => (
                 <motion.div
