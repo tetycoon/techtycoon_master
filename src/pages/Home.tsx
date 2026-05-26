@@ -402,7 +402,7 @@ const Home: React.FC = () => {
       transition={{ duration: 0.8 }}
     >
       <Helmet>
-        <title>Rockbridge | Advanced AI Marketing & Strategic Business Growth</title>
+        <title>Tech Tycoon | Advanced AI Marketing & Strategic Business Growth</title>
         <meta name="description" content="Scale your business with AI-driven marketing, strategic consulting, and premium digital masterclasses. Join 5000+ professionals trained by Tech Tycoon." />
       </Helmet>
       <div className="home-hero">
