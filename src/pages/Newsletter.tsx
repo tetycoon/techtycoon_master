@@ -33,7 +33,7 @@ import loyolaImg1 from '../assets/Newsletter/St Loyola/cybersecurity_training.pn
 import leylandImg1 from '../assets/Newsletter/Ashok Leyland/ashok_leyland_training.png';
 import hindustanImg1 from '../assets/Newsletter/Hindustan/hindustan1.jpg';
 import toshniwalImg1 from '../assets/toshniwal.jpg';
-import aibgmImg1 from '../assets/aibgm_workshop.jpg';
+import aibgmImg1 from '../assets/aibgm_workshop.png';
 import womenEntrepreneursImg1 from '../assets/women_entrepreneurs_workshop.jpg';
 
 interface CollegeActivity {
