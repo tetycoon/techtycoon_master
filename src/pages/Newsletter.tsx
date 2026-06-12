@@ -67,7 +67,7 @@ const collegeActivities: CollegeActivity[] = [
       </>
     ),
     images: [womenEntrepreneursImg1],
-    location: "Tech Tycoon Digital Solution",
+    location: "Aiyavoo Mahal, Aminjikkarai",
     participants: "10 Women Entrepreneurs"
   },
   {
@@ -92,7 +92,7 @@ const collegeActivities: CollegeActivity[] = [
       </>
     ),
     images: [aibgmImg1],
-    location: "Tech Tycoon Digital Solution",
+    location: "Vestin Park Hotel, Egmore",
     participants: "15 entrepreneurs and business owners"
   },
   {
