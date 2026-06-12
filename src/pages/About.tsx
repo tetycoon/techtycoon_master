@@ -122,8 +122,15 @@ const About: React.FC = () => {
   return (
     <main className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
       <Helmet>
-        <title>Our Journey | Tech Tycoon Digital Solution LLP & Founder Antony Praveen</title>
-        <meta name="description" content="Discover how Tech Tycoon is revolutionizing digital education. Meet our founder Antony Praveen and learn about our mission to democratize AI for all." />
+        <title>About Tech Tycoon | AI Marketing Experts & Digital Training Specialists in India</title>
+        <meta name="description" content="Learn about Tech Tycoon Digital Solution LLP and founder Antony Praveen. We are AI marketing experts and corporate trainers with 3+ years of experience, empowering 5000+ professionals across India with cutting-edge digital marketing skills." />
+        <meta name="keywords" content="Tech Tycoon Digital Solution LLP, Antony Praveen, AI marketing expert Chennai, digital marketing trainer India, AI training company, corporate training Chennai, digital marketing consultant India" />
+        <link rel="canonical" href="https://www.techtycoon.in/about" />
+        <meta property="og:title" content="About Tech Tycoon | AI Marketing Experts & Digital Training Specialists" />
+        <meta property="og:description" content="Meet Antony Praveen, founder of Tech Tycoon. AI marketing experts and corporate trainers empowering 5000+ professionals with cutting-edge digital marketing skills." />
+        <meta property="og:url" content="https://www.techtycoon.in/about" />
+        <meta name="twitter:title" content="About Tech Tycoon | AI Marketing Experts & Digital Training Specialists" />
+        <meta name="twitter:description" content="Meet Antony Praveen, founder of Tech Tycoon. AI marketing experts and corporate trainers empowering 5000+ professionals across India." />
       </Helmet>
       {/* Hero Section - Simplified */}
       <section className="relative py-20 md:py-28 overflow-hidden">

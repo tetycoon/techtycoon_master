@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const TermsOfService: React.FC = () => {
   useEffect(() => {
@@ -113,6 +114,15 @@ const TermsOfService: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50/30 to-pink-50/20 dark:from-gray-900 dark:via-purple-950/30 dark:to-pink-950/20 relative overflow-hidden">
+      <Helmet>
+        <title>Terms of Service | Tech Tycoon Digital Solution LLP</title>
+        <meta name="description" content="Review the Terms of Service for Tech Tycoon Digital Solution LLP. Understand your rights and responsibilities when using our AI marketing services, digital training programs, and website at techtycoon.in." />
+        <meta name="keywords" content="Tech Tycoon terms of service, digital marketing agency terms, AI training terms and conditions, Tech Tycoon legal, user agreement India, techtycoon.in terms" />
+        <link rel="canonical" href="https://www.techtycoon.in/terms-of-service" />
+        <meta property="og:title" content="Terms of Service | Tech Tycoon Digital Solution LLP" />
+        <meta property="og:description" content="Read our Terms of Service to understand your rights when using Tech Tycoon's AI marketing services, digital training programs, and digital solutions." />
+        <meta property="og:url" content="https://www.techtycoon.in/terms-of-service" />
+      </Helmet>
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow"></div>

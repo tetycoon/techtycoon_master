@@ -32,6 +32,9 @@ import madrasImg1 from '../assets/Newsletter/Madras University/madras_university
 import loyolaImg1 from '../assets/Newsletter/St Loyola/cybersecurity_training.png';
 import leylandImg1 from '../assets/Newsletter/Ashok Leyland/ashok_leyland_training.png';
 import hindustanImg1 from '../assets/Newsletter/Hindustan/hindustan1.jpg';
+import toshniwalImg1 from '../assets/toshniwal.jpg';
+import aibgmImg1 from '../assets/aibgm_workshop.jpg';
+import womenEntrepreneursImg1 from '../assets/women_entrepreneurs_workshop.jpg';
 
 interface CollegeActivity {
   id: number;
@@ -45,6 +48,131 @@ interface CollegeActivity {
 }
 
 const collegeActivities: CollegeActivity[] = [
+  {
+    id: 19,
+    college: "Tech Tycoon Digital Solution",
+    title: "AI - Workshop for Women Entrepreneurs",
+    date: "June 6th - 7th, 2026",
+    description: (
+      <>
+        <p className="mb-4 text-lg font-semibold italic text-gray-800 dark:text-gray-200">
+          "Last Saturday and Sunday, I Witnessed Something Beautiful."
+        </p>
+        <p className="mb-4">
+          I walked into a room filled with 10 women entrepreneurs. Most of them were above 40.
+        </p>
+        <p className="mb-4">
+          They were business owners, mothers, decision-makers, and dreamers. They had spent years building their businesses through hard work, relationships, trust, and perseverance. But there was one thing they all had in common: <strong>Artificial Intelligence felt intimidating.</strong>
+        </p>
+        <p className="mb-4">
+          Many of them believed AI was something meant for younger generations, tech experts, or large corporations. Some had never used ChatGPT. Some were hesitant to even open an AI tool. And honestly, I understood their hesitation. When technology moves faster than we can keep up with, it often feels easier to stay where we are.
+        </p>
+        <p className="mb-4">
+          But something remarkable happened during the training. The moment they realized AI wasn't there to replace them—but to support them—the entire atmosphere changed. Questions started flowing. Curiosity replaced fear. Excitement replaced hesitation.
+        </p>
+        <p className="mb-4">
+          I watched entrepreneurs discover how they could create marketing content in minutes instead of hours. I saw them explore ways to communicate better with customers, generate business ideas, automate repetitive tasks, and make smarter decisions.
+        </p>
+        <p className="mb-4">
+          What touched me the most wasn't their learning. It was their <strong>willingness to learn</strong>. At an age when many people say, <em>"Technology isn't for me,"</em> these women chose a different response: <em>"Teach me."</em>
+        </p>
+        <p className="mb-4">
+          That single mindset is powerful. Because success today isn't determined by age. It isn't determined by how much technology you already know. It is determined by how willing you are to adapt.
+        </p>
+        <p className="mb-4">
+          As I stood there guiding them through AI tools and practical business applications, I wasn't just teaching technology. I was witnessing transformation. The future belongs to people who remain curious.
+        </p>
+        <p className="mb-4">
+          And if these inspiring women entrepreneurs taught me anything that day, it's this: The strongest competitive advantage in business is not intelligence, experience, or even technology. <strong>It's the courage to keep learning.</strong>
+        </p>
+        <p className="mb-4">
+          To all the women entrepreneurs I had the privilege of training—thank you for reminding me that growth has no age limit. The future is not waiting for us. It's already here. And it's available to anyone willing to embrace it.
+        </p>
+      </>
+    ),
+    images: [womenEntrepreneursImg1],
+    location: "Tech Tycoon Digital Solution",
+    participants: "10 Women Entrepreneurs"
+  },
+  {
+    id: 18,
+    college: "Tech Tycoon Digital Solution",
+    title: "AI - Advanced Business Generative Model Workshop",
+    date: "May 31st 2026",
+    description: (
+      <>
+        <p className="mb-4 text-lg font-semibold italic text-gray-800 dark:text-gray-200">
+          "Have you got a Standing Ovation?"
+        </p>
+        <p className="mb-4">
+          31st May was special. ❤️
+        </p>
+        <p className="mb-4">
+          I conducted the first-ever <strong>AI Business Generative Model (AI BGM)</strong> workshop from my company, <strong>Tech Tycoon Digital Solution</strong>.
+        </p>
+        <p className="mb-4">
+          15 entrepreneurs and business owners spent an entire day learning, building, and implementing AI solutions for their businesses—not just listening, but actually doing.
+        </p>
+        <p className="mb-4">
+          At the end of the session, the participants gave me a standing ovation. I was truly overwhelmed by their love, appreciation, and feedback.
+        </p>
+        <p className="mb-4">
+          Just a small beginning for greater achievements.
+        </p>
+        <p className="text-blue-600 dark:text-blue-400 font-medium">
+          #AI #Entrepreneurship #BusinessGrowth #TechTycoon #ArtificialIntelligence
+        </p>
+      </>
+    ),
+    images: [aibgmImg1],
+    location: "Tech Tycoon Digital Solution",
+    participants: "15 entrepreneurs and business owners"
+  },
+  {
+    id: 17,
+    college: "Toshniwal",
+    title: "AI Workshop for the team at Toshniwal",
+    date: "May 22 2026",
+    description: (
+      <>
+        <p className="mb-4">
+          <em>“Sir… I never thought AI could actually help me in my daily work.”</em> That single sentence at the end of the workshop stayed in my mind during the entire journey back home.
+        </p>
+        <p className="mb-4">
+          Recently, I had the opportunity to conduct a full-day hands-on AI Workshop for the team at Toshniwal. Around 25–30 professionals from different departments walked into the training room with curiosity, excitement… and also a little fear. Because let’s be honest. Most people today are hearing the same thing everywhere: <em>“AI will replace jobs.” “AI is the future.” “Learn AI before it’s too late.”</em> But very few people are actually shown HOW to use AI practically in their work.
+        </p>
+        <p className="mb-4">
+          That is exactly what we focused on throughout the session. Not theory. Not complicated jargon. Not robotic presentations. Real implementation.
+        </p>
+        <div className="mb-4">
+          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">🔍 We explored:</h4>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>How AI can improve Sales & Marketing</li>
+            <li>AI tools that save hours of manual work</li>
+            <li>AI Agents and automation workflows</li>
+            <li>Smarter content creation and customer communication</li>
+            <li>Faster research, reporting, presentations, and productivity</li>
+            <li>Real-time hands-on activities using modern AI tools</li>
+          </ul>
+        </div>
+        <p className="mb-4">
+          And slowly… something interesting started happening in the room. People who were silent in the morning became highly interactive by the afternoon. Participants started testing prompts. They started experimenting. They started asking deeper business questions. Most importantly… They stopped seeing AI as a threat. They started seeing it as a partner. That transformation is the most rewarding part of being an AI trainer.
+        </p>
+        <p className="mb-4">
+          One participant told me: <strong>“We wasted so much time doing things manually all these years.”</strong> Another person said: <strong>“This is the first workshop where we actually practiced instead of just listening.”</strong> That feedback meant a lot to me.
+        </p>
+        <p className="mb-4">
+          Because the real problem today is not lack of AI tools. The real problem is: Most organizations still don’t know how to implement AI effectively. Companies that learn AI practically will move ahead faster. Companies that ignore it will slowly struggle to compete. AI is no longer optional. It is becoming a basic professional skill — just like communication or MS Office once was.
+        </p>
+        <p>
+          A big thank you to the amazing team at Toshniwal for the energy, participation, hospitality, and wonderful feedback throughout the workshop. This is just the beginning. The future belongs to people who are willing to learn, adapt, and evolve with AI. And trust me… that future is arriving much faster than most people think.
+        </p>
+      </>
+    ),
+    images: [toshniwalImg1],
+    location: "Toshniwal",
+    participants: "25–30 professionals"
+  },
   {
     id: 15,
     college: "Ashok Leyland",
@@ -574,8 +702,15 @@ const Newsletter: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
       <Helmet>
-        <title>AI Workshops & Corporate Training | Tech Tycoon Outreach</title>
-        <meta name="description" content="Explore high-impact AI workshops conducted at prestigious institutions like Madras University, Ashok Leyland, and VIT. Hands-on training for the next generation." />
+        <title>AI Workshops & Corporate Training Portfolio | Tech Tycoon Outreach</title>
+        <meta name="description" content="Explore Tech Tycoon's portfolio of high-impact AI workshops and corporate training programs conducted at leading institutions like Madras University, Ashok Leyland, VIT, Hindustan University, and more. Delivered by AI expert Antony Praveen across India." />
+        <meta name="keywords" content="AI workshops India, corporate AI training, Tech Tycoon outreach, Antony Praveen AI trainer, digital marketing workshop colleges India, AI training for universities, corporate upskilling AI, AI workshop Chennai, Madras University AI, Ashok Leyland training" />
+        <link rel="canonical" href="https://www.techtycoon.in/newsletter" />
+        <meta property="og:title" content="AI Workshops & Corporate Training Portfolio | Tech Tycoon Outreach" />
+        <meta property="og:description" content="High-impact AI workshops and corporate training programs at leading institutions. AI trainer Antony Praveen has trained 5000+ professionals across India." />
+        <meta property="og:url" content="https://www.techtycoon.in/newsletter" />
+        <meta name="twitter:title" content="AI Workshops & Corporate Training Portfolio | Tech Tycoon Outreach" />
+        <meta name="twitter:description" content="High-impact AI workshops at Madras University, Ashok Leyland, VIT & more. AI trainer Antony Praveen training the next generation of professionals." />
       </Helmet>
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

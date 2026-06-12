@@ -402,8 +402,16 @@ const Home: React.FC = () => {
       transition={{ duration: 0.8 }}
     >
       <Helmet>
-        <title>Tech Tycoon | Advanced AI Marketing & Strategic Business Growth</title>
-        <meta name="description" content="Scale your business with AI-driven marketing, strategic consulting, and premium digital masterclasses. Join 5000+ professionals trained by Tech Tycoon." />
+        <title>Tech Tycoon | AI Marketing Agency & Digital Growth Experts in India</title>
+        <meta name="description" content="Tech Tycoon is India's leading AI-powered marketing agency. Boost your business with AI-driven digital marketing, SEO, social media, and corporate training. Trusted by 5000+ professionals across India." />
+        <meta name="keywords" content="AI marketing agency India, digital marketing agency Chennai, AI business growth, SEO services India, social media marketing, Tech Tycoon, Antony Praveen, corporate AI training, digital transformation India" />
+        <link rel="canonical" href="https://www.techtycoon.in/" />
+        <meta property="og:title" content="Tech Tycoon | AI Marketing Agency & Digital Growth Experts in India" />
+        <meta property="og:description" content="India's leading AI-powered marketing agency. Scale your business with AI-driven strategies, SEO, social media marketing, and premium corporate training. 5000+ professionals trained." />
+        <meta property="og:url" content="https://www.techtycoon.in/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Tech Tycoon | AI Marketing Agency & Digital Growth Experts in India" />
+        <meta name="twitter:description" content="India's leading AI-powered marketing agency. Scale your business with AI-driven strategies, SEO, social media marketing, and premium corporate training." />
       </Helmet>
       <div className="home-hero">
         {/* Particles background */}

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicy: React.FC = () => {
   useEffect(() => {
@@ -83,6 +84,15 @@ const PrivacyPolicy: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/20 dark:from-gray-900 dark:via-blue-950/30 dark:to-indigo-950/20 relative overflow-hidden">
+      <Helmet>
+        <title>Privacy Policy | Tech Tycoon Digital Solution LLP</title>
+        <meta name="description" content="Read Tech Tycoon Digital Solution LLP's Privacy Policy. Learn how we collect, use, and protect your personal data in compliance with Indian data protection laws. Your privacy and data security are our top priority." />
+        <meta name="keywords" content="Tech Tycoon privacy policy, data protection India, digital marketing agency privacy, personal data policy, GDPR compliance India, user data security Tech Tycoon" />
+        <link rel="canonical" href="https://www.techtycoon.in/privacy-policy" />
+        <meta property="og:title" content="Privacy Policy | Tech Tycoon Digital Solution LLP" />
+        <meta property="og:description" content="Tech Tycoon's Privacy Policy explains how we collect, use, and protect your personal data. Your privacy is our priority." />
+        <meta property="og:url" content="https://www.techtycoon.in/privacy-policy" />
+      </Helmet>
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow"></div>

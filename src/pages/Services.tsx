@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { cn } from '../lib/utils';
 import WhatsAppMarketing from '../assets/whatsappmark.jpeg';
 import { firstRowServices, remainingServices } from '../services/serviceData';
@@ -57,6 +58,17 @@ const Services: React.FC = () => {
 
   return (
     <main className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <Helmet>
+        <title>AI Marketing Services in India | Tech Tycoon Digital Solutions</title>
+        <meta name="description" content="Explore Tech Tycoon's full range of AI-powered marketing services including SEO optimization, social media marketing, influencer marketing, content marketing, WhatsApp marketing, video editing, branding, and website development. Get results-driven digital marketing in India." />
+        <meta name="keywords" content="AI marketing services India, SEO services Chennai, social media marketing agency, influencer marketing India, content marketing services, WhatsApp marketing, video editing services, website development India, digital marketing agency Tech Tycoon" />
+        <link rel="canonical" href="https://www.techtycoon.in/services" />
+        <meta property="og:title" content="AI Marketing Services in India | Tech Tycoon Digital Solutions" />
+        <meta property="og:description" content="AI-powered marketing services: SEO, social media marketing, influencer marketing, content marketing, WhatsApp marketing, video editing, branding & website development." />
+        <meta property="og:url" content="https://www.techtycoon.in/services" />
+        <meta name="twitter:title" content="AI Marketing Services in India | Tech Tycoon Digital Solutions" />
+        <meta name="twitter:description" content="AI-powered marketing services: SEO, social media, influencer marketing, content marketing, WhatsApp marketing, video editing, branding & website development." />
+      </Helmet>
       {/* Hero Section with 3D elements */}
       <section className="relative py-28 md:py-36 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/90 z-0"></div>

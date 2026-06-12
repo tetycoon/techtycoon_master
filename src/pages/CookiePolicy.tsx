@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const CookiePolicy: React.FC = () => {
   useEffect(() => {
@@ -105,6 +106,15 @@ const CookiePolicy: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50/30 to-amber-50/20 dark:from-gray-900 dark:via-orange-950/30 dark:to-amber-950/20 relative overflow-hidden">
+      <Helmet>
+        <title>Cookie Policy | Tech Tycoon Digital Solution LLP</title>
+        <meta name="description" content="Learn how Tech Tycoon Digital Solution LLP uses cookies and tracking technologies on techtycoon.in. Our cookie policy covers essential, analytics, marketing, and functional cookies used to improve your browsing experience." />
+        <meta name="keywords" content="Tech Tycoon cookie policy, website cookies India, analytics cookies, marketing cookies, cookie consent India, digital marketing agency cookie policy, techtycoon.in cookies" />
+        <link rel="canonical" href="https://www.techtycoon.in/cookie-policy" />
+        <meta property="og:title" content="Cookie Policy | Tech Tycoon Digital Solution LLP" />
+        <meta property="og:description" content="Understand how Tech Tycoon uses cookies to improve your experience, analyze traffic, and deliver personalized marketing on techtycoon.in." />
+        <meta property="og:url" content="https://www.techtycoon.in/cookie-policy" />
+      </Helmet>
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse-slow"></div>

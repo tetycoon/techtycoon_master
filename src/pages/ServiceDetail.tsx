@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 // Import service data
 import { allServices } from '../services/serviceData';
@@ -50,6 +51,17 @@ const ServiceDetail: React.FC = () => {
 
   return (
     <main className="bg-gradient-to-b from-gray-50 to-white min-h-screen">
+      <Helmet>
+        <title>{service.title} Services in India | Tech Tycoon Digital Solutions</title>
+        <meta name="description" content={`Boost your business with Tech Tycoon's professional ${service.title.toLowerCase()} services in India. ${service.description} Get expert AI-driven ${service.title.toLowerCase()} solutions tailored for your business growth.`} />
+        <meta name="keywords" content={`${service.title} services India, ${service.title.toLowerCase()} agency, AI ${service.title.toLowerCase()}, digital marketing ${service.title.toLowerCase()}, Tech Tycoon ${service.title.toLowerCase()}, ${service.title.toLowerCase()} company Chennai`} />
+        <link rel="canonical" href={`https://www.techtycoon.in/services/${service.slug}`} />
+        <meta property="og:title" content={`${service.title} Services in India | Tech Tycoon`} />
+        <meta property="og:description" content={`Professional ${service.title.toLowerCase()} services powered by AI. ${service.description}`} />
+        <meta property="og:url" content={`https://www.techtycoon.in/services/${service.slug}`} />
+        <meta name="twitter:title" content={`${service.title} Services in India | Tech Tycoon`} />
+        <meta name="twitter:description" content={`Professional ${service.title.toLowerCase()} services powered by AI. ${service.description}`} />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">
         <div className={`absolute inset-0 bg-gradient-to-r ${service.color} opacity-90 z-0`}></div>
