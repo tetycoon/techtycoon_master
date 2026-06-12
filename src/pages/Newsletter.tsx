@@ -55,38 +55,14 @@ const collegeActivities: CollegeActivity[] = [
     date: "June 6th - 7th, 2026",
     description: (
       <>
-        <p className="mb-4 text-lg font-semibold italic text-gray-800 dark:text-gray-200">
-          "Last Saturday and Sunday, I Witnessed Something Beautiful."
+        <p className="mb-4">
+          I had the privilege of training 10 incredible women entrepreneurs, most above 40, who came in feeling intimidated by Artificial Intelligence.
         </p>
         <p className="mb-4">
-          I walked into a room filled with 10 women entrepreneurs. Most of them were above 40.
+          But something remarkable happened. The moment they realized AI wasn't there to replace them—but to support them—the entire atmosphere changed. They discovered how to create marketing content in minutes, automate repetitive tasks, and make smarter decisions.
         </p>
         <p className="mb-4">
-          They were business owners, mothers, decision-makers, and dreamers. They had spent years building their businesses through hard work, relationships, trust, and perseverance. But there was one thing they all had in common: <strong>Artificial Intelligence felt intimidating.</strong>
-        </p>
-        <p className="mb-4">
-          Many of them believed AI was something meant for younger generations, tech experts, or large corporations. Some had never used ChatGPT. Some were hesitant to even open an AI tool. And honestly, I understood their hesitation. When technology moves faster than we can keep up with, it often feels easier to stay where we are.
-        </p>
-        <p className="mb-4">
-          But something remarkable happened during the training. The moment they realized AI wasn't there to replace them—but to support them—the entire atmosphere changed. Questions started flowing. Curiosity replaced fear. Excitement replaced hesitation.
-        </p>
-        <p className="mb-4">
-          I watched entrepreneurs discover how they could create marketing content in minutes instead of hours. I saw them explore ways to communicate better with customers, generate business ideas, automate repetitive tasks, and make smarter decisions.
-        </p>
-        <p className="mb-4">
-          What touched me the most wasn't their learning. It was their <strong>willingness to learn</strong>. At an age when many people say, <em>"Technology isn't for me,"</em> these women chose a different response: <em>"Teach me."</em>
-        </p>
-        <p className="mb-4">
-          That single mindset is powerful. Because success today isn't determined by age. It isn't determined by how much technology you already know. It is determined by how willing you are to adapt.
-        </p>
-        <p className="mb-4">
-          As I stood there guiding them through AI tools and practical business applications, I wasn't just teaching technology. I was witnessing transformation. The future belongs to people who remain curious.
-        </p>
-        <p className="mb-4">
-          And if these inspiring women entrepreneurs taught me anything that day, it's this: The strongest competitive advantage in business is not intelligence, experience, or even technology. <strong>It's the courage to keep learning.</strong>
-        </p>
-        <p className="mb-4">
-          To all the women entrepreneurs I had the privilege of training—thank you for reminding me that growth has no age limit. The future is not waiting for us. It's already here. And it's available to anyone willing to embrace it.
+          What touched me most wasn't just their learning, but their <strong>courage to keep learning</strong>. Thank you for reminding me that growth has no age limit, and the strongest competitive advantage in business is the willingness to adapt.
         </p>
       </>
     ),
@@ -105,22 +81,13 @@ const collegeActivities: CollegeActivity[] = [
           "Have you got a Standing Ovation?"
         </p>
         <p className="mb-4">
-          31st May was special. ❤️
-        </p>
-        <p className="mb-4">
           I conducted the first-ever <strong>AI Business Generative Model (AI BGM)</strong> workshop from my company, <strong>Tech Tycoon Digital Solution</strong>.
         </p>
         <p className="mb-4">
-          15 entrepreneurs and business owners spent an entire day learning, building, and implementing AI solutions for their businesses—not just listening, but actually doing.
-        </p>
-        <p className="mb-4">
-          At the end of the session, the participants gave me a standing ovation. I was truly overwhelmed by their love, appreciation, and feedback.
-        </p>
-        <p className="mb-4">
-          Just a small beginning for greater achievements.
+          15 entrepreneurs spent an entire day building and implementing AI solutions for their businesses. At the end of the session, the participants gave me a standing ovation. I was truly overwhelmed by their love, appreciation, and feedback.
         </p>
         <p className="text-blue-600 dark:text-blue-400 font-medium">
-          #AI #Entrepreneurship #BusinessGrowth #TechTycoon #ArtificialIntelligence
+          #AI #Entrepreneurship #BusinessGrowth #TechTycoon
         </p>
       </>
     ),
@@ -136,36 +103,20 @@ const collegeActivities: CollegeActivity[] = [
     description: (
       <>
         <p className="mb-4">
-          <em>“Sir… I never thought AI could actually help me in my daily work.”</em> That single sentence at the end of the workshop stayed in my mind during the entire journey back home.
+          <em>“Sir… I never thought AI could actually help me in my daily work.”</em>
         </p>
         <p className="mb-4">
-          Recently, I had the opportunity to conduct a full-day hands-on AI Workshop for the team at Toshniwal. Around 25–30 professionals from different departments walked into the training room with curiosity, excitement… and also a little fear. Because let’s be honest. Most people today are hearing the same thing everywhere: <em>“AI will replace jobs.” “AI is the future.” “Learn AI before it’s too late.”</em> But very few people are actually shown HOW to use AI practically in their work.
-        </p>
-        <p className="mb-4">
-          That is exactly what we focused on throughout the session. Not theory. Not complicated jargon. Not robotic presentations. Real implementation.
+          Recently, I conducted a full-day hands-on AI Workshop for 25–30 professionals from different departments at <strong>Toshniwal</strong>. We moved past the fear of AI replacing jobs and focused on <strong>real implementation</strong>.
         </p>
         <div className="mb-4">
-          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-2">🔍 We explored:</h4>
           <ul className="list-disc pl-5 space-y-1">
-            <li>How AI can improve Sales & Marketing</li>
-            <li>AI tools that save hours of manual work</li>
-            <li>AI Agents and automation workflows</li>
+            <li>Improving Sales & Marketing</li>
             <li>Smarter content creation and customer communication</li>
-            <li>Faster research, reporting, presentations, and productivity</li>
             <li>Real-time hands-on activities using modern AI tools</li>
           </ul>
         </div>
         <p className="mb-4">
-          And slowly… something interesting started happening in the room. People who were silent in the morning became highly interactive by the afternoon. Participants started testing prompts. They started experimenting. They started asking deeper business questions. Most importantly… They stopped seeing AI as a threat. They started seeing it as a partner. That transformation is the most rewarding part of being an AI trainer.
-        </p>
-        <p className="mb-4">
-          One participant told me: <strong>“We wasted so much time doing things manually all these years.”</strong> Another person said: <strong>“This is the first workshop where we actually practiced instead of just listening.”</strong> That feedback meant a lot to me.
-        </p>
-        <p className="mb-4">
-          Because the real problem today is not lack of AI tools. The real problem is: Most organizations still don’t know how to implement AI effectively. Companies that learn AI practically will move ahead faster. Companies that ignore it will slowly struggle to compete. AI is no longer optional. It is becoming a basic professional skill — just like communication or MS Office once was.
-        </p>
-        <p>
-          A big thank you to the amazing team at Toshniwal for the energy, participation, hospitality, and wonderful feedback throughout the workshop. This is just the beginning. The future belongs to people who are willing to learn, adapt, and evolve with AI. And trust me… that future is arriving much faster than most people think.
+          By the afternoon, participants stopped seeing AI as a threat and started seeing it as a partner. The future belongs to people willing to learn, adapt, and evolve with AI. Thank you, Toshniwal, for the amazing energy!
         </p>
       </>
     ),
