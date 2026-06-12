@@ -393,7 +393,7 @@ const Hero: React.FC = () => {
                   <span className="text-blue-100 block text-4xl md:text-5xl">For Business Growth</span>
                 </h1>
                 <p className="text-xl text-blue-200 max-w-xl leading-relaxed">
-                  A visionary enterprise dedicated to revolutionizing how businesses thrive through <span className="text-white font-bold">marketing</span> and professionals excel through <span className="text-white font-bold">training</span> in an increasingly digital landscape.
+                  A visionary enterprise dedicated to revolutionizing how businesses thrive through <span className="text-white font-bold">Business AI Consulting in India</span> and <span className="text-white font-bold">AI Automation Services</span>. We help professionals excel through premier <span className="text-white font-bold">AI Training in Chennai</span>, comprehensive <span className="text-white font-bold">Digital Marketing Training in Chennai</span>, and the top-rated <span className="text-white font-bold">AI Course in Tamil Nadu</span>. Join our hands-on <span className="text-white font-bold">AI Workshop in Chennai</span> to master the digital landscape.
                 </p>
               </div>
 

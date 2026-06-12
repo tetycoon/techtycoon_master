@@ -402,16 +402,16 @@ const Home: React.FC = () => {
       transition={{ duration: 0.8 }}
     >
       <Helmet>
-        <title>Tech Tycoon | AI Marketing Agency & Digital Growth Experts in India</title>
-        <meta name="description" content="Tech Tycoon is India's leading AI-powered marketing agency. Boost your business with AI-driven digital marketing, SEO, social media, and corporate training. Trusted by 5000+ professionals across India." />
-        <meta name="keywords" content="AI marketing agency India, digital marketing agency Chennai, AI business growth, SEO services India, social media marketing, Tech Tycoon, Antony Praveen, corporate AI training, digital transformation India" />
+        <title>Tech Tycoon | AI Training Chennai & Business AI Consulting India</title>
+        <meta name="description" content="Tech Tycoon offers premier AI Training in Chennai, Digital Marketing Training, and AI Courses in Tamil Nadu. We also provide Business AI Consulting in India and AI Automation Services." />
+        <meta name="keywords" content="AI Training Chennai, AI Workshop Chennai, AI Course Tamil Nadu, Digital Marketing Training Chennai, Business AI Consulting India, AI Automation Services, Tech Tycoon" />
         <link rel="canonical" href="https://www.techtycoon.in/" />
-        <meta property="og:title" content="Tech Tycoon | AI Marketing Agency & Digital Growth Experts in India" />
-        <meta property="og:description" content="India's leading AI-powered marketing agency. Scale your business with AI-driven strategies, SEO, social media marketing, and premium corporate training. 5000+ professionals trained." />
+        <meta property="og:title" content="Tech Tycoon | AI Training Chennai & Business AI Consulting India" />
+        <meta property="og:description" content="Tech Tycoon offers premier AI Training in Chennai, Digital Marketing Training, and AI Courses in Tamil Nadu. We also provide Business AI Consulting in India and AI Automation Services." />
         <meta property="og:url" content="https://www.techtycoon.in/" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:title" content="Tech Tycoon | AI Marketing Agency & Digital Growth Experts in India" />
-        <meta name="twitter:description" content="India's leading AI-powered marketing agency. Scale your business with AI-driven strategies, SEO, social media marketing, and premium corporate training." />
+        <meta name="twitter:title" content="Tech Tycoon | AI Training Chennai & Business AI Consulting India" />
+        <meta name="twitter:description" content="Tech Tycoon offers premier AI Training in Chennai, Digital Marketing Training, and AI Courses in Tamil Nadu. We also provide Business AI Consulting in India and AI Automation Services." />
       </Helmet>
       <div className="home-hero">
         {/* Particles background */}
