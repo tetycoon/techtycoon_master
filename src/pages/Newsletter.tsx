@@ -50,7 +50,7 @@ interface CollegeActivity {
 const collegeActivities: CollegeActivity[] = [
   {
     id: 19,
-    college: "Tech Tycoon Digital Solution",
+    college: "Women's Entrepreneur AI Workshop",
     title: "AI - Workshop for Women Entrepreneurs",
     date: "June 6th - 7th, 2026",
     description: (
@@ -72,7 +72,7 @@ const collegeActivities: CollegeActivity[] = [
   },
   {
     id: 18,
-    college: "Tech Tycoon Digital Solution",
+    college: "Vestin Park, Egmore",
     title: "AI - Advanced Business Generative Model Workshop",
     date: "May 31st 2026",
     description: (

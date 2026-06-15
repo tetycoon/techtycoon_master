@@ -305,7 +305,7 @@ const About: React.FC = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeInUp}
                 >
-                  Since 2023, we've been passionate about democratizing AI education through comprehensive workshops and training programs. Our mission is to bridge the gap between complex AI technology and everyday business applications.
+                  Since 2023, we've been passionate about democratizing AI education through comprehensive workshops and training programs. As a premier provider of <span className="text-primary-500 dark:text-primary-400 font-semibold">AI Training in Chennai</span>, our mission is to bridge the gap between complex AI technology and everyday business applications.
                 </motion.p>
 
                 <motion.p
@@ -315,7 +315,7 @@ const About: React.FC = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeInUp}
                 >
-                  Starting with small groups and individual consultations, we've now trained <span className="text-primary-500 dark:text-primary-400 font-semibold">thousands of professionals</span> through both online and offline workshops. Our courses cover everything from AI fundamentals to advanced applications in business, marketing, and automation.
+                  Starting with small groups and individual consultations, we've now trained <span className="text-primary-500 dark:text-primary-400 font-semibold">thousands of professionals</span> through both online and offline workshops. We offer the top-rated <span className="text-primary-500 dark:text-primary-400 font-semibold">AI Course in Tamil Nadu</span>, covering everything from AI fundamentals to advanced applications in business, marketing, and automation.
                 </motion.p>
 
                 <motion.p
@@ -325,7 +325,7 @@ const About: React.FC = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeInUp}
                 >
-                  Each workshop is designed with practical, hands-on learning experiences that participants can immediately apply to their work. From unlocking AI secrets to mastering PowerBI, digital marketing, and business automation, our training programs are crafted to deliver real-world value at an accessible price point of just ₹99 per session.
+                  Each hands-on <span className="text-primary-500 dark:text-primary-400 font-semibold">AI Workshop in Chennai</span> is designed with practical learning experiences that participants can immediately apply to their work. From unlocking AI secrets to mastering PowerBI, digital marketing, and business automation, our training programs are crafted to deliver real-world value at an accessible price point of just ₹99 per session.
                 </motion.p>
               </div>
 

@@ -651,8 +651,7 @@ const Home: React.FC = () => {
                     className="leading-relaxed"
                   >
                     As the founder of Tech Tycoon Digital Solution LLP, I am passionate about empowering
-                    businesses and individuals to unlock their potential in the digital world. With over 3 years of
-                    experience in digital marketing, content creation, and training, my journey has been
+                    businesses and individuals to unlock their potential in the digital world. By offering premier <span className="font-semibold text-primary dark:text-blue-300">Digital Marketing Training in Chennai</span> and specialized AI solutions, my journey has been
                     shaped by a commitment to excellence and innovation.
                   </motion.p>
 
