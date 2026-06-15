@@ -61,6 +61,29 @@ const ServiceDetail: React.FC = () => {
         <meta property="og:url" content={`https://www.techtycoon.in/services/${service.slug}`} />
         <meta name="twitter:title" content={`${service.title} Services in India | Tech Tycoon`} />
         <meta name="twitter:description" content={`Professional ${service.title.toLowerCase()} services powered by AI. ${service.description}`} />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "serviceType": "${service.title}",
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": "Tech Tycoon Digital Solution LLP",
+                "url": "https://www.techtycoon.in/"
+              },
+              "areaServed": {
+                "@type": "Country",
+                "name": "India"
+              },
+              "description": "${service.description}",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "INR"
+              }
+            }
+          `}
+        </script>
       </Helmet>
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden">

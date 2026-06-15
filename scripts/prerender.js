@@ -20,8 +20,27 @@ const server = app.listen(PORT, async () => {
     const browser = await puppeteer.launch({ headless: 'new' });
     const page = await browser.newPage();
     
-    // We only need to prerender the home page for the main SEO issues, but we can add more later
-    const routes = ['/'];
+    const routes = [
+      '/',
+      '/about',
+      '/services',
+      '/newsletter',
+      '/faq',
+      '/services/influencer-marketing',
+      '/services/video-editing',
+      '/services/seo-optimization',
+      '/services/social-media-marketing',
+      '/services/social-media-optimization',
+      '/services/content-marketing',
+      '/services/email-campaigns',
+      '/services/predictive-analytics',
+      '/services/conversion-optimization',
+      '/services/website-development',
+      '/services/poster-designing',
+      '/services/profile-resume-building',
+      '/services/branding',
+      '/services/whatsapp-marketing'
+    ];
     
     for (const route of routes) {
       console.log(`Prerendering route: ${route}`);

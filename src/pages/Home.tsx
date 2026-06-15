@@ -412,6 +412,52 @@ const Home: React.FC = () => {
         <meta property="og:type" content="website" />
         <meta name="twitter:title" content="Tech Tycoon | AI Training Chennai & Business AI Consulting India" />
         <meta name="twitter:description" content="Tech Tycoon offers premier AI Training in Chennai, Digital Marketing Training, and AI Courses in Tamil Nadu. We also provide Business AI Consulting in India and AI Automation Services." />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "Tech Tycoon Digital Solution LLP",
+              "alternateName": "Tech Tycoon",
+              "image": "https://www.techtycoon.in/logo.png",
+              "url": "https://www.techtycoon.in/",
+              "telephone": "+91-7558133039",
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Meenakshi flat, Ground floor, Sivasubramaniam Street, Ramalingam Nagar, Madipakkam",
+                "addressLocality": "Chennai",
+                "addressRegion": "Tamil Nadu",
+                "postalCode": "600091",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 12.9649,
+                "longitude": 80.1961
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "19:00"
+              },
+              "sameAs": [
+                "https://www.instagram.com/techtycoon_digitalsolutions/",
+                "https://www.linkedin.com/company/tech-tycoon-digital-solutions/",
+                "https://youtube.com/@techtycoon_digitalsolutions",
+                "https://www.facebook.com/share/1BuHNrPi6j/"
+              ]
+            }
+          `}
+        </script>
       </Helmet>
       <div className="home-hero">
         {/* Particles background */}

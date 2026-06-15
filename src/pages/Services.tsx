@@ -140,7 +140,7 @@ const Services: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
             >
-              Supercharge Your Marketing Strategy
+              Supercharge Your Growth with AI Marketing Services in India
             </motion.h2>
             <motion.p
               className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"

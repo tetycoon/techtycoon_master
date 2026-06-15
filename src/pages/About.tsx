@@ -131,6 +131,32 @@ const About: React.FC = () => {
         <meta property="og:url" content="https://www.techtycoon.in/about" />
         <meta name="twitter:title" content="About Tech Tycoon | AI Marketing Experts & Digital Training Specialists" />
         <meta name="twitter:description" content="Meet Antony Praveen, founder of Tech Tycoon. AI marketing experts and corporate trainers empowering 5000+ professionals across India." />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "mainEntity": {
+                "@type": "Person",
+                "name": "Antony Praveen",
+                "jobTitle": "Founder & CEO",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "Tech Tycoon Digital Solution LLP"
+                },
+                "alumniOf": {
+                  "@type": "EducationalOrganization",
+                  "name": "Master's Degree in Philosophy"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/antony_praveen/",
+                  "https://www.linkedin.com/in/antony-praveen/"
+                ],
+                "description": "Antony Praveen is the founder of Tech Tycoon Digital Solution LLP, specialized in AI-driven marketing, corporate training, and business automation in India."
+              }
+            }
+          `}
+        </script>
       </Helmet>
       {/* Hero Section - Simplified */}
       <section className="relative py-20 md:py-28 overflow-hidden">
@@ -218,7 +244,7 @@ const About: React.FC = () => {
               viewport={{ once: true, margin: "-50px" }}
               variants={fadeInUp}
             >
-              Our Journey in AI Marketing
+              Our Journey in AI Marketing and Corporate Workshops in India
             </motion.h2>
             <motion.p
               className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
