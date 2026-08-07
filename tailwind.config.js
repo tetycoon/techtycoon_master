@@ -112,7 +112,7 @@ module.exports = {
         '5xl': '2.5rem',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Outfit', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'soft-xl': '0 20px 27px 0 rgba(0, 0, 0, 0.05)',
