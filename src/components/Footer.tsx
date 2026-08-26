@@ -116,12 +116,26 @@ const Footer: React.FC = () => {
                     transition={{ delay: 0.1 * index + 0.3 }}
                     whileHover={{ x: 5 }}
                   >
-                    <Link to={link.href} className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                      <span className="whitespace-nowrap pr-2">{link.label}</span>
-                    </Link>
+                    {link.href.startsWith('http') ? (
+                      <a 
+                        href={link.href} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span className="whitespace-nowrap pr-2">{link.label}</span>
+                      </a>
+                    ) : (
+                      <Link to={link.href} className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                        <span className="whitespace-nowrap pr-2">{link.label}</span>
+                      </Link>
+                    )}
                   </motion.li>
                 ))}
               </motion.ul>
@@ -323,7 +337,7 @@ const socialLinks = [
 const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/courses", label: "Courses" },
+  { href: "https://aitycoon.in/", label: "Courses" },
   { href: "/newsletter", label: "Newsletter" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" }

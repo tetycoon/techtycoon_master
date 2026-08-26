@@ -134,6 +134,7 @@ const ServicesLazy = lazy(() => import('./pages/Services'));
 const ServiceDetailLazy = lazy(() => import('./pages/ServiceDetail'));
 const NewsletterLazy = lazy(() => import('./pages/Newsletter'));
 const ProfileLazy = lazy(() => import('./pages/Profile'));
+const ContactLazy = lazy(() => import('./pages/Contact'));
 
 // Custom component to conditionally render WhatsAppButton
 const ConditionalWhatsAppButton = () => {
@@ -322,6 +323,19 @@ function AppContent() {
                     variants={pageVariants}
                   >
                     <ProfileLazy />
+                  </motion.div>
+                </Layout>
+              } />
+
+              <Route path="/contact" element={
+                <Layout>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={pageVariants}
+                  >
+                    <ContactLazy />
                   </motion.div>
                 </Layout>
               } />
