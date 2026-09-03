@@ -30,6 +30,11 @@
       "dest": "/robots.txt"
     },
     {
+      "src": "/workshop",
+      "status": 307,
+      "headers": { "Location": "https://aitycoon.in/upscale/" }
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

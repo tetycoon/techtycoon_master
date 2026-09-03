@@ -144,6 +144,18 @@ const ConditionalWhatsAppButton = () => {
   return <WhatsAppButton />;
 };
 
+// Component to handle /workshop route redirect
+const WorkshopRedirect = () => {
+  useEffect(() => {
+    window.location.href = 'https://aitycoon.in/upscale/';
+  }, []);
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <p className="text-gray-600 dark:text-gray-300 font-medium">Redirecting to Workshop...</p>
+    </div>
+  );
+};
+
 // Main App wrapper that handles all routes
 function AppContent() {
   const { resolvedTheme } = useTheme();
@@ -339,6 +351,8 @@ function AppContent() {
                   </motion.div>
                 </Layout>
               } />
+
+              <Route path="/workshop" element={<WorkshopRedirect />} />
 
               {/* Catch-all 404 route */}
               <Route path="*" element={

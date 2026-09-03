@@ -28,6 +28,7 @@ const server = app.listen(PORT, async () => {
       '/faq',
       '/profile',
       '/contact',
+      '/workshop',
       '/services/influencer-marketing',
       '/services/video-editing',
       '/services/seo-optimization',
