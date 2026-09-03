@@ -382,8 +382,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Email",
-    value: "info@techtycoon.in",
-    href: "mailto:info@techtycoon.in"
+    value: "admin@techtycoon.in",
+    href: "mailto:admin@techtycoon.in"
   },
   {
     icon: (

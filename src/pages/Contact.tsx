@@ -10,7 +10,7 @@ const EMAILJS_CONFIG = {
   serviceId: 'service_q3q75bd',
   templateId: 'template_52sgt8p',
   publicKey: 'JPL083BhpGSElhQKd',
-  adminEmail: 'techtycoondigitalsolutions@gmail.com'
+  adminEmail: 'admin@techtycoon.in'
 };
 
 const Contact: React.FC = () => {
@@ -160,12 +160,9 @@ const Contact: React.FC = () => {
                       <FiMail className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white text-base">Email Addresses</h4>
+                      <h4 className="font-semibold text-gray-900 dark:text-white text-base">Email Address</h4>
                       <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-                        <a href="mailto:info@techtycoon.in" className="hover:text-blue-600 transition-colors font-medium">info@techtycoon.in</a>
-                      </p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">
-                        <a href="mailto:techtycoondigitalsolutions@gmail.com" className="hover:text-blue-600 transition-colors">techtycoondigitalsolutions@gmail.com</a>
+                        <a href="mailto:admin@techtycoon.in" className="hover:text-blue-600 transition-colors font-medium">admin@techtycoon.in</a>
                       </p>
                     </div>
                   </div>

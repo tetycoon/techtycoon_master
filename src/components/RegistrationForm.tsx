@@ -12,7 +12,7 @@ const EMAILJS_CONFIG = {
   serviceId: 'service_q3q75bd',
   templateId: 'template_52sgt8p',
   publicKey: 'JPL083BhpGSElhQKd',
-  adminEmail: 'techtycoondigitalsolutions@gmail.com'
+  adminEmail: 'admin@techtycoon.in'
 };
 
 interface CourseDetails {

@@ -9,7 +9,7 @@ const EMAILJS_CONFIG = {
     serviceId: 'service_q3q75bd',
     templateId: 'template_52sgt8p',
     publicKey: 'JPL083BhpGSElhQKd',
-    adminEmail: 'techtycoondigitalsolutions@gmail.com'
+    adminEmail: 'admin@techtycoon.in'
 };
 
 interface GetInTouchModalProps {
@@ -100,7 +100,7 @@ const GetInTouchModal: React.FC<GetInTouchModalProps> = ({ onClose }) => {
             if (err?.status) {
                 errorMessage += `Status: ${err.status}. `;
             }
-            errorMessage += 'Please contact us directly at techtycoondigitalsolutions@gmail.com or call +91 7558133039';
+            errorMessage += 'Please contact us directly at admin@techtycoon.in or call +91 7558133039';
 
             setError(errorMessage);
         } finally {
