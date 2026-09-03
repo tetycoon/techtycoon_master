@@ -731,6 +731,32 @@ const Newsletter: React.FC = () => {
             Empowering the next generation of leaders and professionals through high-impact 
             educational workshops and advanced AI training programs across India.
           </p>
+
+          {/* Upcoming Live Workshop Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="mt-10 max-w-3xl mx-auto bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white p-6 rounded-2xl shadow-xl border border-white/20 flex flex-col md:flex-row items-center justify-between gap-4 text-left"
+          >
+            <div>
+              <span className="inline-block px-3 py-1 bg-white/20 text-white text-xs font-semibold uppercase tracking-wider rounded-full mb-2">
+                ⚡ Upcoming Live Event
+              </span>
+              <h3 className="text-xl font-bold">Hands-on AI Masterclass Workshop</h3>
+              <p className="text-blue-100 text-sm mt-1">
+                Date: 29 August 2026 (Tentative) • Interactive Training & Practical Case Studies
+              </p>
+            </div>
+            <a
+              href="https://aitycoon.in/upscale/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-white text-blue-700 hover:bg-blue-50 font-bold rounded-xl shadow-md transition-all whitespace-nowrap text-sm"
+            >
+              Register Now →
+            </a>
+          </motion.div>
         </motion.div>
 
         {/* College Activities */}

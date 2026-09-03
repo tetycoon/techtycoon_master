@@ -338,7 +338,7 @@ const quickLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "https://aitycoon.in/", label: "Courses" },
-  { href: "/newsletter", label: "Newsletter" },
+  { href: "/workshop", label: "Workshop" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" }
 ];

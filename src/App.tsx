@@ -352,7 +352,18 @@ function AppContent() {
                 </Layout>
               } />
 
-              <Route path="/workshop" element={<WorkshopRedirect />} />
+              <Route path="/workshop" element={
+                <Layout>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={pageVariants}
+                  >
+                    <NewsletterLazy />
+                  </motion.div>
+                </Layout>
+              } />
 
               {/* Catch-all 404 route */}
               <Route path="*" element={
