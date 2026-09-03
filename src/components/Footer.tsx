@@ -382,8 +382,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Email",
-    value: "techtycoondigitalsolutions@gmail.com",
-    href: "mailto:techtycoondigitalsolutions@gmail.com"
+    value: "info@techtycoon.in",
+    href: "mailto:info@techtycoon.in"
   },
   {
     icon: (
@@ -392,7 +392,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Business Hours",
-    value: "Mon - Sat: 9:00 AM - 7:00 PM",
+    value: "Mon - Sat: 9:00 AM - 5:30 PM | Sun: Closed / Support",
     href: "#"
   }
 ];

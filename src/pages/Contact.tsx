@@ -162,10 +162,10 @@ const Contact: React.FC = () => {
                     <div>
                       <h4 className="font-semibold text-gray-900 dark:text-white text-base">Email Addresses</h4>
                       <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
-                        <a href="mailto:techtycoondigitalsolutions@gmail.com" className="hover:text-blue-600 transition-colors">techtycoondigitalsolutions@gmail.com</a>
+                        <a href="mailto:info@techtycoon.in" className="hover:text-blue-600 transition-colors font-medium">info@techtycoon.in</a>
                       </p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">
-                        <a href="mailto:saiskillsage@gmail.com" className="hover:text-blue-600 transition-colors">saiskillsage@gmail.com</a>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs">
+                        <a href="mailto:techtycoondigitalsolutions@gmail.com" className="hover:text-blue-600 transition-colors">techtycoondigitalsolutions@gmail.com</a>
                       </p>
                     </div>
                   </div>
@@ -181,7 +181,7 @@ const Contact: React.FC = () => {
                         Monday – Saturday: 9:00 AM – 5:30 PM
                       </p>
                       <p className="text-gray-500 dark:text-gray-400 text-sm">
-                        Sunday: Closed
+                        Sunday: Closed (Appointments & Online Support Available)
                       </p>
                     </div>
                   </div>
@@ -207,7 +207,8 @@ const Contact: React.FC = () => {
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Connect Socially</h3>
                 <div className="flex gap-4">
                   {[
-                    { href: "https://www.linkedin.com/in/antony-praveen/", icon: <FiLinkedin className="w-5 h-5" />, label: "LinkedIn" },
+                    { href: "https://www.linkedin.com/company/tech-tycoon-digital-solutions/?viewAsMember=true", icon: <FiLinkedin className="w-5 h-5" />, label: "Company LinkedIn" },
+                    { href: "https://www.linkedin.com/in/antony-praveen/", icon: <FiLinkedin className="w-5 h-5" />, label: "Antony Praveen LinkedIn" },
                     { href: "https://www.instagram.com/antony_praveen/", icon: <FiInstagram className="w-5 h-5" />, label: "Instagram" },
                     { href: "https://www.facebook.com/people/Tech-Tycoon/61571520140700/", icon: <FiFacebook className="w-5 h-5" />, label: "Facebook" },
                     { href: "https://www.youtube.com/@antony_praveen", icon: <FiYoutube className="w-5 h-5" />, label: "YouTube" }

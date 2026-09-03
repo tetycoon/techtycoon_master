@@ -30,6 +30,30 @@ const AnimatedButton: React.FC<{
 }> = ({ children, primary = false, onClick, to, className = '' }) => {
 
   if (to) {
+    if (to.startsWith('http')) {
+      return (
+        <a href={to} target="_blank" rel="noopener noreferrer">
+          <motion.button
+            className={`relative group overflow-hidden rounded-xl border btn-hover-effect transition-all duration-300 ${primary
+              ? 'bg-blue-600 text-white border-transparent shadow-blue-glow hover:bg-blue-700'
+              : 'bg-blue-100/30 backdrop-blur-sm border-blue-400/30 text-blue-800 hover:border-blue-500/50 dark:bg-blue-900/30 dark:text-blue-100 dark:border-blue-700/50'
+              } ${className}`}
+            whileHover={{ scale: 1.05, boxShadow: primary ? '0 10px 25px rgba(37, 99, 235, 0.35)' : '0 8px 20px rgba(37, 99, 235, 0.15)' }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <span className="absolute inset-0 w-full h-full bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span className="relative z-10 px-8 py-3 inline-flex items-center justify-center font-medium">
+              {children}
+              <motion.span
+                className="ml-2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300"
+              >
+                →
+              </motion.span>
+            </span>
+          </motion.button>
+        </a>
+      );
+    }
     return (
       <Link to={to}>
         <motion.button
@@ -288,7 +312,7 @@ const Hero: React.FC = () => {
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGRpZ2l0YWwlMjBtYXJrZXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
       fallbackImage: digitalMarketingImg,
-      link: "/services"
+      link: "/services/social-media-marketing"
     },
     {
       title: "Executive Training",
@@ -296,7 +320,7 @@ const Hero: React.FC = () => {
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>,
       image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGV4ZWN1dGl2ZSUyMHRyYWluaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
       fallbackImage: executiveTrainingImg,
-      link: "/newsletter"
+      link: "/services/profile-resume-building"
     },
     {
       title: "Strategic Consulting",
@@ -304,7 +328,7 @@ const Hero: React.FC = () => {
       icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg>,
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHN0cmF0ZWdpYyUyMGNvbnN1bHRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
       fallbackImage: strategicConsultingImg,
-      link: "/about"
+      link: "/services/seo-optimization"
     }
   ];
 
@@ -398,7 +422,7 @@ const Hero: React.FC = () => {
               </div>
 
               <div className="flex flex-wrap gap-4 mt-10">
-                <AnimatedButton primary to="/courses">
+                <AnimatedButton primary to="https://aitycoon.in/">
                   Start Your Journey
                 </AnimatedButton>
                 <AnimatedButton primary to="/services">

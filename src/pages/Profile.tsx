@@ -169,13 +169,31 @@ const Profile: React.FC = () => {
                     to empower businesses and individuals.
                   </p>
                   
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-wrap items-center gap-4">
                     <button 
                       onClick={() => setShowContactModal(true)}
                       className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all shadow-lg shadow-blue-500/25"
                     >
                       Get in Touch
                     </button>
+                    
+                    <a
+                      href="https://www.linkedin.com/in/antony-praveen/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 bg-blue-50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full font-medium transition-all border border-blue-200 dark:border-blue-700/50 shadow-sm"
+                    >
+                      <FiLinkedin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                      <span>LinkedIn Profile</span>
+                    </a>
+
+                    <a
+                      href="mailto:info@techtycoon.in"
+                      className="flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full font-medium transition-all shadow-sm"
+                    >
+                      <FiMail className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                      <span>info@techtycoon.in</span>
+                    </a>
                   </div>
                 </motion.div>
 

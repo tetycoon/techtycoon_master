@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
         <ul className="hidden md:flex items-center gap-6">
           <NavItem to="/" label="Home" isActive={isActive('/')} />
           <NavItem to="/services" label="Services" isActive={isActive('/services')} />
-          <NavItem to="/newsletter" label="Workshop" isActive={isActive('/newsletter')} />
+          <NavItem to="https://aitycoon.in/upscale/" label="Workshop" isActive={false} isExternal={true} />
           <NavItem to="/about" label="About" isActive={isActive('/about')} />
           <NavItem to="/profile" label="Profile" isActive={isActive('/profile')} />
 
@@ -292,10 +292,11 @@ const Navbar: React.FC = () => {
                   </a>
                 </motion.li>
                 <MobileNavItem
-                  to="/newsletter"
+                  to="https://aitycoon.in/upscale/"
                   label="Workshop"
-                  isActive={isActive('/newsletter')}
+                  isActive={false}
                   onClick={() => setIsOpen(false)}
+                  isExternal={true}
                 />
                 <MobileNavItem
                   to="/about"
