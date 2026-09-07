@@ -268,12 +268,15 @@ const About: React.FC = () => {
               >
                 <div className="overflow-hidden rounded-xl shadow-lg">
                   <img
-                    src={storyImg}
+                    src="https://techtycoon.in/wp-content/uploads/2026/09/antony-praveen.jpg"
                     alt="Antony Praveen - Founder & AI Trainer"
                     className="w-full h-full object-cover"
                     loading="lazy"
                     width="600"
                     height="400"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = storyImg;
+                    }}
                   />
                 </div>
               </motion.div>

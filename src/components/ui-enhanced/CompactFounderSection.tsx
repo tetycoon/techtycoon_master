@@ -10,8 +10,8 @@ interface CompactFounderSectionProps {
 export const CompactFounderSection: React.FC<CompactFounderSectionProps> = ({ className }) => {
   const [imageError, setImageError] = useState(false);
   
-  // Use the public path for the image
-  const founderImageUrl = '/Antony.png';
+  // Use the new public image URL for the founder
+  const founderImageUrl = 'https://techtycoon.in/wp-content/uploads/2026/09/antony-praveen.jpg';
   
   return (
     <motion.div 

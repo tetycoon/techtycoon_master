@@ -11,7 +11,7 @@ export const FounderSection: React.FC<FounderSectionProps> = ({ className }) => 
   const [imageError, setImageError] = useState(false);
   
   // Image path as a fallback
-  const imagePath = '/src/assets/Antony.png';
+  const imagePath = 'https://techtycoon.in/wp-content/uploads/2026/09/antony-praveen.jpg';
   
   return (
     <div className={`bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-2xl p-8 shadow-lg ${className}`}>

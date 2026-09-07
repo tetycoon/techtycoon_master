@@ -205,7 +205,7 @@ const Profile: React.FC = () => {
                 >
                   <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 max-w-sm mx-auto">
                     <img 
-                      src="/marketing/profile.png" 
+                      src="https://techtycoon.in/wp-content/uploads/2026/09/antony-praveen.jpg" 
                       alt="Antony Praveen" 
                       className="w-full h-auto object-cover aspect-[3/4]"
                       onError={(e) => {

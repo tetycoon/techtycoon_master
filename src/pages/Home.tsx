@@ -633,7 +633,7 @@ const Home: React.FC = () => {
                   <div className="absolute -bottom-4 -right-4 w-full h-full bg-primary/20 rounded-2xl transform -rotate-3"></div>
                   <div className="relative overflow-hidden rounded-2xl border border-blue-100 shadow-xl shadow-blue-500/10 dark:border-blue-500/20">
                     <motion.img
-                      src={AntonyImage}
+                      src="https://techtycoon.in/wp-content/uploads/2026/09/antony-praveen.jpg"
                       alt="Antony Praveen"
                       className="w-full h-full object-cover"
                       onError={(e) => {
