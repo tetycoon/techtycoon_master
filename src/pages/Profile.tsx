@@ -291,7 +291,7 @@ const Profile: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   <a
-                    href="https://aitycoon.in/"
+                    href="https://academy.techtycoon.in/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full font-bold text-lg shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
