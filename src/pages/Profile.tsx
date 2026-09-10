@@ -145,7 +145,7 @@ const Profile: React.FC = () => {
             <section className="relative flex flex-col justify-center overflow-hidden pb-16">
               <div className="container mx-auto px-4 md:px-16 lg:px-24 xl:px-32 grid lg:grid-cols-12 gap-12 items-center mb-16">
                 <motion.div
-                  className="lg:col-span-8"
+                  className="lg:col-span-12"
                   initial={{ x: -30, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.6 }}
@@ -156,13 +156,13 @@ const Profile: React.FC = () => {
                   <h2 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
                     Antony <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Praveen</span>
                   </h2>
-                  <p className="text-xl lg:text-2xl text-gray-800 dark:text-gray-200 mb-4 max-w-2xl font-medium">
+                  <p className="text-xl lg:text-2xl text-gray-800 dark:text-gray-200 mb-4 max-w-3xl font-medium">
                     Founder of Tech Tycoon Digital Solution LLP | Digital Marketing, Digital Media & AI Specialist | Professional Trainer
                   </p>
                   <p className="text-lg text-gray-500 dark:text-gray-400 mb-6 italic">
                     "AI-Powered, Human-Centered"
                   </p>
-                  <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-3xl">
+                  <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-4xl">
                     With a Master's Degree in Philosophy and over 5 years of expertise in communication, 
                     digital media, and AI, I bring a unique perspective to the digital landscape. 
                     My passion lies in blending creative strategies with cutting-edge digital tools 
@@ -195,26 +195,6 @@ const Profile: React.FC = () => {
                       <span>admin@techtycoon.in</span>
                     </a>
                   </div>
-                </motion.div>
-
-                <motion.div
-                  className="relative lg:col-span-4"
-                  initial={{ x: 30, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.15 }}
-                >
-                  <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 max-w-sm mx-auto">
-                    <img 
-                      src="https://techtycoon.in/wp-content/uploads/2026/09/antony-praveen.jpg" 
-                      alt="Antony Praveen" 
-                      className="w-full h-auto object-cover aspect-[3/4]"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = "https://placehold.co/600x800/3B82F6/FFFFFF?text=Antony+Praveen";
-                      }}
-                    />
-                  </div>
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl -z-10" />
-                  <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl -z-10" />
                 </motion.div>
               </div>
 
