@@ -238,6 +238,73 @@ const Profile: React.FC = () => {
               </div>
             </section>
 
+            {/* My Online AI Training Section */}
+            <section className="py-20 bg-gradient-to-b from-blue-50/50 via-indigo-50/30 to-white dark:from-gray-900/40 dark:via-gray-900/20 dark:to-gray-950">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+                <motion.span
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="inline-block px-4 py-1.5 rounded-full bg-blue-100/80 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 text-sm font-semibold mb-4 uppercase tracking-wider border border-blue-200/50 dark:border-blue-800/50"
+                >
+                  Featured Online Course
+                </motion.span>
+                <motion.h2 
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight"
+                >
+                  My Online <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">AI Training</span>
+                </motion.h2>
+                <motion.p 
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 font-light leading-relaxed"
+                >
+                  Advance Claude Mastery — 20+ hours of hands-on lessons, prompts, and real-world projects built for complete beginners to advanced AI practitioners.
+                </motion.p>
+
+                {/* Course Banner Image Container */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 mb-10 group bg-white dark:bg-gray-900"
+                >
+                  <img
+                    src="https://techtycoon.in/advance-claude-mastery.jpg"
+                    alt="Advance Claude Mastery - Online AI Training by Antony Praveen"
+                    className="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "/advance-claude-mastery.jpg";
+                    }}
+                  />
+                </motion.div>
+
+                {/* Enroll Now Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <a
+                    href="https://aitycoon.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full font-bold text-lg shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
+                  >
+                    <span>Enroll Now</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </a>
+                </motion.div>
+              </div>
+            </section>
+
             {/* Antony Areas of Expertise */}
             <section className="py-24 bg-gray-50/50 dark:bg-gray-900/20">
               <div className="container mx-auto px-4">
