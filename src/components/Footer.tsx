@@ -250,7 +250,11 @@ const Footer: React.FC = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       {item.label && <div className="text-xs text-gray-500 mb-0.5 whitespace-nowrap pr-2">{item.label}</div>}
-                      <a href={item.href} className="text-gray-400 hover:text-white transition-colors text-sm break-words pr-2">
+                      <a 
+                        href={item.href} 
+                        {...(item.href.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="text-gray-400 hover:text-white transition-colors text-sm break-words pr-2"
+                      >
                         {item.value}
                       </a>
                     </div>
@@ -362,8 +366,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Address",
-    value: "Meenakshi flat, Ground floor, Sivasubramaniam Street, Ramalingam Nagar, Madipakkam, Chennai - 600091",
-    href: "https://goo.gl/maps/YrpzJcGcnjXa9d4W6"
+    value: "No. 3/59B, 1st Floor, 3rd Street, Ragava Nagar, Moovarasampet, Chennai-600091",
+    href: "https://www.google.com/maps/search/?api=1&query=No.+3%2F59B%2C+1st+Floor%2C+3rd+Street%2C+Ragava+Nagar%2C+Moovarasampet%2C+Chennai-600091"
   },
   {
     icon: (

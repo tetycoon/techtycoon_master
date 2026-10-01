@@ -17,7 +17,10 @@ const server = app.listen(PORT, async () => {
   console.log(`Prerender server running on port ${PORT}`);
   
   try {
-    const browser = await puppeteer.launch({ headless: 'new' });
+    const browser = await puppeteer.launch({ 
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox'] 
+    });
     const page = await browser.newPage();
     
     const routes = [
@@ -47,7 +50,7 @@ const server = app.listen(PORT, async () => {
     
     for (const route of routes) {
       console.log(`Prerendering route: ${route}`);
-      await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: 'networkidle0' });
+      await page.goto(`http://127.0.0.1:${PORT}${route}`, { waitUntil: 'networkidle0' });
       
       // Wait an extra 2 seconds for any animations/React renders
       await new Promise(resolve => setTimeout(resolve, 2000));

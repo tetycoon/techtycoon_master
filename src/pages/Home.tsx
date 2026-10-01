@@ -425,7 +425,7 @@ const Home: React.FC = () => {
               "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Meenakshi flat, Ground floor, Sivasubramaniam Street, Ramalingam Nagar, Madipakkam",
+                "streetAddress": "No. 3/59B, 1st Floor, 3rd Street, Ragava Nagar, Moovarasampet",
                 "addressLocality": "Chennai",
                 "addressRegion": "Tamil Nadu",
                 "postalCode": "600091",
