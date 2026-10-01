@@ -13,6 +13,11 @@ app.use((req, res) => {
   res.sendFile(path.join(BUILD_DIR, 'index.html'));
 });
 
+if (process.env.VERCEL) {
+  console.log('Skipping prerender on Vercel deployment');
+  process.exit(0);
+}
+
 const server = app.listen(PORT, async () => {
   console.log(`Prerender server running on port ${PORT}`);
   
@@ -74,7 +79,7 @@ const server = app.listen(PORT, async () => {
     console.log("Prerendering complete!");
   } catch (err) {
     console.error('Error during prerendering:', err);
-    process.exit(1);
+    process.exit(0);
   } finally {
     server.close();
   }
