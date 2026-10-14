@@ -62,11 +62,12 @@ const TermsOfService: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
         </svg>
       ),
-      title: "Live Online Sessions & Rescheduling Policy (course.techtycoon.in)",
+      title: "Live Online Sessions & Satisfaction Policy (course.techtycoon.in)",
       description: "For cohort-based courses and workshops conducted via live video conference:",
       items: [
         "Punctuality & Decorum: Participants are expected to join on time and maintain professional, respectful conduct in audio, video, and chat interactions.",
-        "Missed Session Reschedule: If Tech Tycoon misses or is unable to conduct a particular live session as originally scheduled (due to technical issues or instructor emergency), no monetary refund is provided. Tech Tycoon will reschedule and conduct the session within 4 to 7 days.",
+        "Missed Session Reschedule: If Tech Tycoon misses or is unable to conduct a particular live session as originally scheduled (due to technical issues or instructor emergency), no monetary refund is provided. Tech Tycoon will reschedule and conduct that session within 4 to 7 days.",
+        "Course / Session Satisfaction: If a participant is not satisfied with a particular live session or topic, we take their constructive feedback seriously and will arrange an updated or supplementary session in the upcoming days to ensure complete learning value.",
         "No Unauthorized Recording: Participants are strictly prohibited from screen-recording, capturing, or distributing live classroom sessions or webinars.",
         "Disciplinary Action: Tech Tycoon reserves the right to immediately remove any participant engaging in abusive behavior, harassment, spamming, or disruption, without refund."
       ]
@@ -95,12 +96,12 @@ const TermsOfService: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
-      title: "Payments, Fees & Invoicing",
+      title: "Payments, Invoicing & Duplicate Payments",
       description: "Financial transactions across techtycoon.in, academy.techtycoon.in, and course.techtycoon.in are subject to the following:",
       items: [
-        "All course enrollments and service packages require 100% full upfront payment prior to accessing the LMS or receiving live session links.",
-        "Prices are quoted in Indian Rupees (INR) unless specified otherwise, and applicable taxes (GST) are calculated at checkout.",
-        "Transactions are handled through RBI-compliant authorized payment gateways (e.g., Razorpay, Cashfree, Stripe)."
+        "Upfront Payment: All course enrollments and service packages require 100% full upfront payment prior to accessing the LMS or receiving live session links.",
+        "Prices & Currency: Prices are quoted in Indian Rupees (INR) unless specified otherwise, and applicable taxes (GST) are calculated at checkout.",
+        "Duplicate / Excess Payments: If a user accidentally registers for the same course/session multiple times or pays extra, the user must request a refund of the duplicate balance amount to admin@techtycoon.in. Once our verification team confirms it as a valid duplicate payment, our team will initiate the refund back to the original payment source within 5 to 7 business days."
       ]
     },
     {
@@ -111,11 +112,12 @@ const TermsOfService: React.FC = () => {
         </svg>
       ),
       title: "Strict No Refund Policy",
-      description: "Tech Tycoon maintains a strict No Refund Policy across all websites and platforms. We do not provide monetary refunds for any purchases:",
+      description: "Tech Tycoon maintains a strict No Refund Policy across all websites and platforms. We do not provide monetary refunds for any purchases, subject only to valid duplicate payments:",
       items: [
         "All Webpages & Services: All sales and fee payments across techtycoon.in, academy.techtycoon.in, and course.techtycoon.in are final and 100% non-refundable under any circumstances.",
         "Self-Paced Courses (academy.techtycoon.in): Non-refundable upon immediate granting of digital LMS access and materials.",
-        "Live Online Sessions (course.techtycoon.in): Strictly non-refundable. If Tech Tycoon misses or is unable to conduct a particular live session on its scheduled date, no refund is provided; Tech Tycoon will arrange the rescheduled session within 4 to 7 days.",
+        "Live Online Sessions (course.techtycoon.in): Non-refundable. If Tech Tycoon misses conducting a scheduled session, we will arrange the rescheduled session within 4 to 7 days.",
+        "Session Dissatisfaction: No cash refunds are provided for dissatisfaction. Feedback is gathered and updated sessions are scheduled in upcoming days.",
         "Agency & Consulting (techtycoon.in): Retainers, setup fees, and project milestone payments are non-refundable once work commences."
       ],
       note: "For complete details, please read our official Refund & Cancellation Policy."
