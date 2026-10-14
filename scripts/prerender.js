@@ -50,7 +50,10 @@ const server = app.listen(PORT, async () => {
       '/services/poster-designing',
       '/services/profile-resume-building',
       '/services/branding',
-      '/services/whatsapp-marketing'
+      '/services/whatsapp-marketing',
+      '/privacy-policy',
+      '/terms-of-service',
+      '/refund-policy'
     ];
     
     for (const route of routes) {

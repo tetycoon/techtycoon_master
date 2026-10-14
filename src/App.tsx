@@ -22,6 +22,7 @@ import ServiceDetail from './pages/ServiceDetail';
 import Newsletter from './pages/Newsletter';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import RefundPolicy from './pages/RefundPolicy';
 import CookiePolicy from './pages/CookiePolicy';
 
 // Page transition variants
@@ -308,6 +309,34 @@ function AppContent() {
                     variants={pageVariants}
                   >
                     <TermsOfService />
+                  </motion.div>
+                </Layout>
+              } />
+
+              {/* Cancellation & Refund Policy page */}
+              <Route path="/refund-policy" element={
+                <Layout>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={pageVariants}
+                  >
+                    <RefundPolicy />
+                  </motion.div>
+                </Layout>
+              } />
+
+              {/* Alias for payment gateway compliance */}
+              <Route path="/cancellation-and-refund-policy" element={
+                <Layout>
+                  <motion.div
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={pageVariants}
+                  >
+                    <RefundPolicy />
                   </motion.div>
                 </Layout>
               } />
