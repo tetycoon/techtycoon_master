@@ -279,7 +279,7 @@ const RefundPolicy: React.FC = () => {
               </Link>
             </div>
             <div className="mt-6 text-xs text-purple-200">
-              Tech Tycoon Digital Solution LLP | No. 3/59B, 1st Floor, 3rd Street, Ragava Nagar, Moovarasampet, Chennai-600091, Tamil Nadu, India
+              Tech Tycoon Digital Solution LLP | No. 31, Ramalinga Nagar, Madipakkam, Chennai, TamilNadu 600091, Tamil Nadu, India
             </div>
           </div>
         </motion.div>

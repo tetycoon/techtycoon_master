@@ -367,8 +367,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Address",
-    value: "No. 3/59B, 1st Floor, 3rd Street, Ragava Nagar, Moovarasampet, Chennai-600091",
-    href: "https://www.google.com/maps/search/?api=1&query=No.+3%2F59B%2C+1st+Floor%2C+3rd+Street%2C+Ragava+Nagar%2C+Moovarasampet%2C+Chennai-600091"
+    value: "No. 31, Ramalinga Nagar, Madipakkam, Chennai, TamilNadu 600091",
+    href: "https://www.google.com/maps/search/?api=1&query=No.+31%2C+Ramalinga+Nagar%2C+Madipakkam%2C+Chennai%2C+TamilNadu+600091"
   },
   {
     icon: (
