@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/claude_resources",
+      "destination": "/claude_resources/index.html"
+    },
+    {
+      "source": "/claude_resources/:path*",
+      "destination": "/claude_resources/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

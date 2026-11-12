@@ -136,6 +136,7 @@ const ServiceDetailLazy = lazy(() => import('./pages/ServiceDetail'));
 const NewsletterLazy = lazy(() => import('./pages/Newsletter'));
 const ProfileLazy = lazy(() => import('./pages/Profile'));
 const ContactLazy = lazy(() => import('./pages/Contact'));
+const AiVideoGenerationLazy = lazy(() => import('./pages/AiVideoGenerationMasterclass'));
 
 // Custom component to conditionally render WhatsAppButton
 const ConditionalWhatsAppButton = () => {
@@ -153,6 +154,18 @@ const WorkshopRedirect = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
       <p className="text-gray-600 dark:text-gray-300 font-medium">Redirecting to Workshop...</p>
+    </div>
+  );
+};
+
+// Component to handle /claude_resources route redirect to standalone landing page
+const ClaudeResourcesRedirect = () => {
+  useEffect(() => {
+    window.location.replace('/claude_resources/index.html');
+  }, []);
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#0B0A09] text-white">
+      <p className="font-medium text-lg">Loading Claude Resources...</p>
     </div>
   );
 };
@@ -393,6 +406,18 @@ function AppContent() {
                   </motion.div>
                 </Layout>
               } />
+
+              {/* 3-Hours AI Filmmaking & AI Video Generation Live Webinar Landing Page */}
+              <Route path="/ai-video-generation" element={<AiVideoGenerationLazy />} />
+              <Route path="/ai-filmmaking" element={<AiVideoGenerationLazy />} />
+              <Route path="/ai_video_generation" element={<AiVideoGenerationLazy />} />
+              <Route path="/ai_filmmaking" element={<AiVideoGenerationLazy />} />
+
+              {/* Claude Resources Landing Page (Ultimate Claude Skills) */}
+              <Route path="/claude_resources" element={<ClaudeResourcesRedirect />} />
+              <Route path="/claude_resources/*" element={<ClaudeResourcesRedirect />} />
+              <Route path="/claude-resources" element={<ClaudeResourcesRedirect />} />
+              <Route path="/claude-resources/*" element={<ClaudeResourcesRedirect />} />
 
               {/* Catch-all 404 route */}
               <Route path="*" element={

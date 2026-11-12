@@ -53,7 +53,10 @@ const server = app.listen(PORT, async () => {
       '/services/whatsapp-marketing',
       '/privacy-policy',
       '/terms-of-service',
-      '/refund-policy'
+      '/refund-policy',
+      '/ai_filmmaking',
+      '/ai-filmmaking',
+      '/ai-video-generation'
     ];
     
     for (const route of routes) {
