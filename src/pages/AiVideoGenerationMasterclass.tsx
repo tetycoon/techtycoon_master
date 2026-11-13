@@ -23,20 +23,22 @@ import {
   VolumeX,
   Maximize2
 } from 'lucide-react';
-import logo from '../assets/logo.png';
-import antonyImage from '../assets/Antony.png';
-const aiLogoSample = '/logo.png';
-const aiAvatarSample = '/antony-praveen.jpg';
-const aiVideoSample = '/advance-claude-mastery.jpg';
-const aiProductCommercial = '/advance-claude-mastery.jpg';
-const aiPixarCharacter = '/antony-praveen.jpg';
-const aiBrandIdent = '/logo.png';
-const event1 = '/antony-praveen.jpg';
-const event2 = '/advance-claude-mastery.jpg';
-const event3 = '/antony-praveen.jpg';
-const event4 = '/advance-claude-mastery.jpg';
-const event5 = '/antony-praveen.jpg';
-const event6 = '/advance-claude-mastery.jpg';
+import logo from '../assets/tech_tycoon_logo.png';
+import antonyImage from '../assets/trainer-photo.png';
+import aiLogoSample from '../assets/ai_logo_sample.jpg';
+import aiAvatarSample from '../assets/ai_avatar_sample.jpg';
+import aiVideoSample from '../assets/ai_video_sample.jpg';
+import aiProductCommercial from '../assets/ai_product_commercial.jpg';
+import aiPixarCharacter from '../assets/ai_pixar_character.jpg';
+import aiBrandIdent from '../assets/ai_brand_ident.jpg';
+import heroAiFilmmakingStudio from '../assets/hero_ai_filmmaking_studio.jpg';
+import AiFilmmakingLeadGate from '../components/ai_filmmaking/AiFilmmakingLeadGate';
+import event1 from '../assets/event-1.jpg';
+import event2 from '../assets/event-2.jpg';
+import event3 from '../assets/event-3.jpg';
+import event4 from '../assets/event-4.jpg';
+import event5 from '../assets/event-5.jpg';
+import event6 from '../assets/event-6.jpg';
 
 // ============================================================================
 // CONFIGURATION: GOOGLE APPS SCRIPT & DUAL RAZORPAY (INDIAN + FOREIGN)
@@ -388,33 +390,33 @@ const aiVideoShowcaseItems: Array<{
 }> = [
   {
     id: 'logo-reveal',
-    title: '3D Brand & Product Reveal on Neon Pedestal',
+    title: '3D AI Metallic Logo Animation & Brand Ident',
     category: 'Module 01 • 3D AI Logo & Brand Animation',
     mode: 'logo',
     videoUrl: '/videos/ai_veo_3d_brand.mp4',
     image: aiLogoSample,
-    fps: '4K • VEO 3D',
-    prompt: '"3D floating brand showcase on glowing neon pedestal with orbiting 3D icons, volumetric studio lighting, 60fps"'
+    fps: '4K • 3D LOGO',
+    prompt: '"3D metallic brand logo reveal with volumetric cyan lighting, floating sparks, water ripple reflections, 60fps"'
   },
   {
     id: 'avatar-spokesperson',
-    title: '3D Holographic Neural AI Cinema & Voiceover',
-    category: 'Module 02 • AI Avatar & Neural Audio',
+    title: 'Photorealistic AI Studio Avatar & Lip-Sync Presenter',
+    category: 'Module 02 • AI Avatar & Lip-Sync',
     mode: 'avatar',
     videoUrl: '/videos/ai_veo_neural_cinema.mp4',
     image: aiAvatarSample,
-    fps: 'Google Veo AI',
-    prompt: '"Glowing 3D holographic neural brain with orbiting cyan data particles in dark studio, spatial cinema soundscape"'
+    fps: '1080P • AI AVATAR',
+    prompt: '"Hyper-realistic AI virtual spokesperson in studio speaking to microphone with natural hand gestures and frame-accurate lip-sync"'
   },
   {
     id: 'fpv-drone-cinema',
-    title: '3D Cybernetic Mechanical VFX Transformation',
-    category: 'Module 03 • AI Video Generation & VFX',
+    title: 'Cinematic Movie Scene & Anamorphic Film Direction',
+    category: 'Module 03 • AI Video Generation & Filmmaking',
     mode: 'video',
     videoUrl: '/videos/ai_veo_cyber_vfx.mp4',
     image: aiVideoSample,
-    fps: 'Veo VFX • 60FPS',
-    prompt: '"Cybernetic 3D mechanical core exploding into floating titanium components with glowing blue energy arcs and robotic SFX"'
+    fps: 'CINEMATIC • 24FPS',
+    prompt: '"Hollywood cinematic sunset film scene with anamorphic golden-hour lighting, cinematic depth-of-field, and motion camera track"'
   },
   {
     id: 'product-ad',
@@ -501,7 +503,7 @@ const AiFilmmakingPage: React.FC = () => {
   // FAQ Accordion State
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
 
-  // Set page title & Meta Pixel ViewContent
+  // Set page title, Meta Pixel ViewContent & ensure developer cinematic layer
   useEffect(() => {
     document.title =
       '3-Hours AI Filmmaking & Video Generation Live Webinar | Every Sunday 10 AM – 1 PM IST | Tech Tycoon';
@@ -510,6 +512,25 @@ const AiFilmmakingPage: React.FC = () => {
         content_name: '3-Hours AI Filmmaking & Video Generation Live Webinar'
       });
     }
+
+    document.documentElement.classList.add('cfx', 'cfx-light');
+
+    if (!document.querySelector('link[href*="/ai_filmmaking/fx/cinematic.css"]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/ai_filmmaking/fx/cinematic.css?v=3';
+      document.head.appendChild(link);
+    }
+    if (!document.querySelector('script[src*="/ai_filmmaking/fx/cinematic.js"]')) {
+      const script = document.createElement('script');
+      script.defer = true;
+      script.src = '/ai_filmmaking/fx/cinematic.js?v=3';
+      document.head.appendChild(script);
+    }
+
+    return () => {
+      document.documentElement.classList.remove('cfx', 'cfx-light');
+    };
   }, []);
 
   // Live countdown timer
@@ -910,7 +931,7 @@ const AiFilmmakingPage: React.FC = () => {
 
             {/* GST Tax Invoice Email Delivery Notice */}
             <div className="rounded-xl bg-blue-50/70 border border-blue-200/70 p-3 my-3 text-center">
-              <div className="flex items-center justify-center gap-2 font-bold text-blue-900 mb-0.5 text-xs">
+              <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-blue-900 mb-0.5">
                 <Mail className="w-4 h-4 text-blue-600 shrink-0" />
                 <span>GST Tax Invoice Sent to Your Email</span>
               </div>
@@ -953,6 +974,9 @@ const AiFilmmakingPage: React.FC = () => {
   // ============================================================================
   return (
     <div className="min-h-screen bg-[#040711] text-white selection:bg-blue-600 selection:text-white overflow-x-hidden font-sans pb-20">
+      {/* Lead Capture Popup Modal for Meta Ads & Campaigns */}
+      <AiFilmmakingLeadGate />
+
       {/* CSS Keyframes for 3D Perspective Grid */}
       <style>{`
         @keyframes gridMove3D {
@@ -1015,267 +1039,81 @@ const AiFilmmakingPage: React.FC = () => {
       </header>
 
       {/* ====================================================================
-          HERO SECTION WITH AUTO-PLAYING 60FPS AI VIDEO STUDIO MONITOR
+          CINEMATIC HERO SECTION WITH VIRTUAL PRODUCTION STUDIO BACKGROUND
       ==================================================================== */}
-      <section className="relative pt-6 pb-14 sm:pt-12 sm:pb-24 overflow-hidden">
-        {/* Ambient Tech Tycoon Royal Blue & Cyan Spotlights */}
-        <div className="absolute -top-32 left-1/4 w-[350px] sm:w-[550px] h-[350px] sm:h-[550px] bg-blue-600/20 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute top-20 right-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-cyan-500/15 rounded-full blur-[130px] pointer-events-none" />
-
-        {/* 3D Perspective Horizon Floor Grid */}
-        <div className="absolute inset-x-0 bottom-0 h-64 sm:h-80 overflow-hidden pointer-events-none opacity-55">
-          <div className="w-[200%] -left-1/2 h-[450px] relative cyber-grid-3d" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#040711] via-transparent to-[#040711]" />
+      <section
+        data-cfx-keep="true"
+        className="relative min-h-[620px] sm:min-h-[720px] lg:min-h-[820px] flex items-center justify-center pt-12 pb-16 sm:pt-20 sm:pb-28 overflow-hidden bg-[#04060e] text-white"
+      >
+        {/* 100% FULLY VISIBLE AI Superhero & Multiverse Background Image */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img
+            src={heroAiFilmmakingStudio}
+            alt="AI Video Generation & AI World Creation with Superhero"
+            className="w-full h-full object-cover object-center"
+          />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-            {/* Left Column: High-Converting Copy, 3 Pillars & Schedule */}
-            <div className="lg:col-span-7 text-center lg:text-left">
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/35 text-blue-200 text-[11px] sm:text-xs font-bold mb-4 sm:mb-5 shadow-[0_0_25px_rgba(37,99,235,0.2)]">
-                <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                <span>3-HOURS BASIC &amp; FOUNDATION LIVE WEBINAR</span>
-              </div>
-
-              <h1 className="text-3xl sm:text-5xl xl:text-[3.5rem] font-black tracking-tight leading-[1.12] mb-4 sm:mb-5">
-                Master{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">
-                  3D AI Filmmaking
-                </span>{' '}
-                &amp;{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500">
-                  AI Video Generation
-                </span>{' '}
-                in 3 Hours
-              </h1>
-
-              <p className="text-sm sm:text-lg text-slate-300 leading-relaxed mb-6 max-w-2xl mx-auto lg:mx-0">
-                Go from complete beginner to directing studio-quality{' '}
-                <strong className="text-cyan-300">3D AI Logo Animations</strong>, hyper-realistic{' '}
-                <strong className="text-blue-300">Talking AI Avatars</strong>, and breathtaking{' '}
-                <strong className="text-amber-300">Cinematic AI Videos</strong> — live every Sunday morning (10:00 AM – 1:00 PM IST) without expensive cameras or complex 3D software.
-              </p>
-
-              {/* 3 Core Pillars Mini Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 mb-6">
-                <div
-                  onClick={() => setHeroActiveSlide(0)}
-                  className={`cursor-pointer flex items-center gap-3 p-3 rounded-2xl border transition-all ${
-                    heroActiveSlide === 0
-                      ? 'bg-blue-950/80 border-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.25)]'
-                      : 'bg-slate-900/80 border-white/10 hover:border-cyan-500/40'
-                  }`}
-                >
-                  <img
-                    src={aiLogoSample}
-                    alt="AI Logo Animation"
-                    className="w-12 h-12 rounded-xl object-cover border border-cyan-400/40 shrink-0"
-                  />
-                  <div className="text-left min-w-0">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-400 block">
-                      Topic 01
-                    </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-white block truncate">
-                      AI Logo Animation
-                    </span>
-                  </div>
-                </div>
-
-                <div
-                  onClick={() => setHeroActiveSlide(1)}
-                  className={`cursor-pointer flex items-center gap-3 p-3 rounded-2xl border transition-all ${
-                    heroActiveSlide === 1
-                      ? 'bg-blue-950/80 border-blue-400 shadow-[0_0_20px_rgba(37,99,235,0.25)]'
-                      : 'bg-slate-900/80 border-white/10 hover:border-blue-500/40'
-                  }`}
-                >
-                  <img
-                    src={aiAvatarSample}
-                    alt="AI Avatar Creation"
-                    className="w-12 h-12 rounded-xl object-cover border border-blue-400/40 shrink-0"
-                  />
-                  <div className="text-left min-w-0">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-blue-400 block">
-                      Topic 02
-                    </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-white block truncate">
-                      AI Avatar Creation
-                    </span>
-                  </div>
-                </div>
-
-                <div
-                  onClick={() => setHeroActiveSlide(2)}
-                  className={`cursor-pointer flex items-center gap-3 p-3 rounded-2xl border transition-all ${
-                    heroActiveSlide === 2
-                      ? 'bg-blue-950/80 border-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.25)]'
-                      : 'bg-slate-900/80 border-white/10 hover:border-amber-500/40'
-                  }`}
-                >
-                  <img
-                    src={aiVideoSample}
-                    alt="AI Video Generation"
-                    className="w-12 h-12 rounded-xl object-cover border border-amber-400/40 shrink-0"
-                  />
-                  <div className="text-left min-w-0">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block">
-                      Topic 03
-                    </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-white block truncate">
-                      AI Video Generation
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Schedule & Countdown Box (Mobile-Optimized) */}
-              <div className="rounded-2xl bg-slate-900/90 border border-white/15 p-3.5 sm:p-4 mb-6 backdrop-blur-xl">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5">
-                  <div className="flex items-center gap-3 text-left">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/30">
-                      <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] sm:text-xs uppercase tracking-widest text-cyan-400 font-bold">
-                        Every Sunday Morning • Live Batch
-                      </p>
-                      <p className="text-xs sm:text-base font-extrabold text-white">
-                        {sessionInfo.formattedDate} • 10:00 AM – 1:00 PM IST
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Live Countdown */}
-                  <div className="grid grid-cols-4 gap-1.5 sm:flex sm:items-center sm:gap-2">
-                    {[
-                      { label: 'Days', val: timeLeft.days },
-                      { label: 'Hrs', val: timeLeft.hours },
-                      { label: 'Min', val: timeLeft.minutes },
-                      { label: 'Sec', val: timeLeft.seconds }
-                    ].map((item, idx) => (
-                      <div
-                        key={idx}
-                        className="px-2 py-1.5 rounded-xl bg-black/60 border border-blue-500/30 text-center min-w-[52px]"
-                      >
-                        <span className="block text-sm sm:text-lg font-black font-mono text-white leading-none">
-                          {String(item.val).padStart(2, '0')}
-                        </span>
-                        <span className="block text-[9px] uppercase tracking-wider text-slate-400 mt-0.5">
-                          {item.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 justify-center lg:justify-start">
-                <button
-                  onClick={() => openCheckout(false)}
-                  className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-black text-base sm:text-lg shadow-[0_0_35px_rgba(37,99,235,0.45)] transition-all cursor-pointer"
-                >
-                  <span>Reserve Sunday Seat for ₹99</span>
-                  <span className="line-through text-xs text-white/70 font-normal">₹1,999</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-
-                <button
-                  onClick={() => openCheckout(true)}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:py-4 rounded-2xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/40 text-amber-200 font-bold text-xs sm:text-sm transition-all cursor-pointer"
-                >
-                  <FileText className="w-4 h-4 text-amber-400 shrink-0" />
-                  <span>+ ₹400 Session PDF &amp; Material Option</span>
-                </button>
-              </div>
-
-              <div className="mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-[11px] sm:text-xs text-slate-400">
-                <span className="inline-flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" /> GST Tax Invoice Included
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Award className="w-4 h-4 text-blue-400" /> Beginner &amp; Foundation Friendly
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-cyan-400" /> 3 Hours Live Practical Training
-                </span>
-              </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 text-center lg:text-left w-full">
+          <div className="max-w-2xl bg-slate-950/45 sm:bg-slate-950/40 p-6 sm:p-8 rounded-3xl backdrop-blur-md border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+            {/* Eyebrow Badge */}
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-blue-500/25 border border-blue-400/40 text-blue-200 text-[11px] sm:text-xs font-bold mb-4 sm:mb-6 shadow-[0_0_30px_rgba(37,99,235,0.3)]">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>3-HOURS BASIC &amp; FOUNDATION LIVE WEBINAR</span>
             </div>
 
-            {/* Right Column: AUTO-PLAYING 60FPS REAL AI VIDEO STUDIO MONITOR */}
-            <div className="lg:col-span-5">
-              <Interactive3DTiltCard
-                glowColor="rgba(6, 182, 212, 0.35)"
-                className="bg-gradient-to-b from-slate-900/95 via-[#091128]/95 to-slate-950/95 border border-blue-500/30 p-4 sm:p-6"
+            {/* Main Headline */}
+            <h1 className="text-3xl sm:text-5xl xl:text-[3.5rem] font-black tracking-tight leading-[1.12] mb-4 sm:mb-6 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]">
+              Master{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-300">
+                AI Filmmaking
+              </span>{' '}
+              &amp;{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-400">
+                AI Video Generation
+              </span>{' '}
+              in 3 Hours
+            </h1>
+
+            {/* Subtitle Copy */}
+            <p className="text-sm sm:text-base text-slate-200 leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              Go from complete beginner to directing studio-quality{' '}
+              <strong className="text-cyan-300">3D AI Logo Animations</strong>, hyper-realistic{' '}
+              <strong className="text-blue-300">Talking AI Avatars</strong>, and breathtaking{' '}
+              <strong className="text-amber-300">Cinematic AI Videos</strong> — live every Sunday morning (10:00 AM – 1:00 PM IST) without expensive cameras or complex 3D software.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 justify-center lg:justify-start">
+              <button
+                onClick={() => openCheckout(false)}
+                className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2.5 px-7 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-black text-sm sm:text-base shadow-[0_0_35px_rgba(37,99,235,0.6)] transition-all cursor-pointer"
               >
-                {/* Top Studio Monitor Header */}
-                <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3.5">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-                    <span className="ml-1.5 text-[11px] font-mono text-slate-300 font-semibold truncate">
-                      AI_VIDEO_ENGINE // LIVE_60FPS
-                    </span>
-                  </div>
-                  <span className="px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-mono text-[10px] font-bold">
-                    ● PLAYING AI VIDEO
-                  </span>
-                </div>
+                <span>Reserve Sunday Seat for ₹99</span>
+                <span className="line-through text-xs text-white/70 font-normal">₹1,999</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
 
-                {/* Live Auto-Playing Real Google Veo MP4 AI Video Player */}
-                <RealAiVideoPlayer
-                  videoUrl={currentHeroSlide.videoUrl}
-                  imageSrc={currentHeroSlide.image}
-                  title={currentHeroSlide.title}
-                  mode={currentHeroSlide.mode}
-                  badge={currentHeroSlide.category}
-                  fpsLabel={currentHeroSlide.fps}
-                  promptText={currentHeroSlide.prompt}
-                  autoPlay={true}
-                  showControls={true}
-                  onExpandClick={() => setExpandedAiVideo(currentHeroSlide)}
-                />
+              <button
+                onClick={() => openCheckout(true)}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 sm:py-4 rounded-2xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/50 text-amber-200 font-bold text-xs sm:text-sm backdrop-blur-md transition-all cursor-pointer shadow-[0_0_20px_rgba(245,158,11,0.2)]"
+              >
+                <FileText className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>+ ₹400 Resource ToolKit Option</span>
+              </button>
+            </div>
 
-                {/* 3 Interactive AI Video Selector Thumbnails */}
-                <div className="grid grid-cols-3 gap-2 mt-3">
-                  {heroSlides.map((slide, idx) => (
-                    <button
-                      key={slide.id}
-                      type="button"
-                      onClick={() => setHeroActiveSlide(idx as 0 | 1 | 2)}
-                      className={`p-1.5 rounded-xl border text-left transition-all cursor-pointer ${
-                        heroActiveSlide === idx
-                          ? 'bg-blue-600/25 border-blue-400 shadow-sm'
-                          : 'bg-white/5 border-white/10 opacity-70 hover:opacity-100'
-                      }`}
-                    >
-                      <div className="aspect-video rounded-lg overflow-hidden mb-1">
-                        <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-                      </div>
-                      <p className="text-[10px] font-bold text-white truncate px-0.5">
-                        0{idx + 1}. {idx === 0 ? '3D Logo' : idx === 1 ? 'AI Avatar' : 'AI Video'}
-                      </p>
-                    </button>
-                  ))}
-                </div>
-
-                {/* Live Telemetry Footer */}
-                <div className="mt-3.5 rounded-xl bg-black/60 border border-white/10 p-2.5 grid grid-cols-3 gap-2 text-center">
-                  <div className="p-1.5 rounded-lg bg-white/5">
-                    <p className="text-[10px] text-slate-400">Sunday Slot</p>
-                    <p className="text-xs font-bold text-white">10 AM – 1 PM</p>
-                  </div>
-                  <div className="p-1.5 rounded-lg bg-white/5">
-                    <p className="text-[10px] text-slate-400">Live Fee</p>
-                    <p className="text-xs font-black text-emerald-400">₹99 Only</p>
-                  </div>
-                  <div className="p-1.5 rounded-lg bg-white/5">
-                    <p className="text-[10px] text-slate-400">PDF + Material</p>
-                    <p className="text-xs font-bold text-amber-300">+₹400 Add-on</p>
-                  </div>
-                </div>
-              </Interactive3DTiltCard>
+            {/* Trust Badges */}
+            <div className="mt-5 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-slate-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              <span className="inline-flex items-center gap-1.5 font-medium">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" /> GST Tax Invoice Included
+              </span>
+              <span className="inline-flex items-center gap-1.5 font-medium">
+                <Award className="w-4 h-4 text-blue-400" /> Beginner &amp; Foundation Friendly
+              </span>
+              <span className="inline-flex items-center gap-1.5 font-medium">
+                <Clock className="w-4 h-4 text-cyan-400" /> 3 Hours Live Practical Training
+              </span>
             </div>
           </div>
         </div>
@@ -1603,47 +1441,6 @@ const AiFilmmakingPage: React.FC = () => {
       </section>
 
       {/* ====================================================================
-          SECTION 5: REAL WORKSHOP & TRAINING PHOTO GALLERY
-      ==================================================================== */}
-      <section className="py-14 sm:py-24 relative border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-            <span className="px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 text-[11px] sm:text-xs font-bold uppercase tracking-widest">
-              Real Impact • 10,000+ Learners Trained Across India
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black mt-3 sm:mt-4 mb-3">
-              Glimpses from Our Live AI Workshops &amp; Corporate Sessions
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-            {workshopPhotos.map((photo, idx) => (
-              <div
-                key={idx}
-                className="group relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden border border-white/15 bg-slate-900 shadow-lg"
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
-                <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 text-left">
-                  <span className="inline-block px-2 py-0.5 rounded bg-blue-600/90 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider mb-1">
-                    {photo.tag}
-                  </span>
-                  <p className="text-[11px] sm:text-sm font-bold text-white leading-snug line-clamp-1">
-                    {photo.title}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================================
           SECTION 6: PRICING & OPTIONAL +₹400 SESSION PDF & MATERIAL BUNDLE
       ==================================================================== */}
       <section id="pricing" className="py-14 sm:py-24 bg-[#060a18] border-t border-white/10 relative">
@@ -1892,7 +1689,7 @@ const AiFilmmakingPage: React.FC = () => {
               3-Hr AI Filmmaking:{' '}
               <span className="text-emerald-400">₹99</span>{' '}
               <span className="text-xs text-slate-400 font-normal hidden sm:inline">
-                (Optional +₹400 Session PDF &amp; Material at Checkout)
+                (Optional +₹400 Resource ToolKit at Checkout)
               </span>
             </p>
           </div>
@@ -2077,32 +1874,28 @@ const AiFilmmakingPage: React.FC = () => {
                         htmlFor="filmmaking-pdf-opt-in"
                         className="text-xs sm:text-sm font-bold text-slate-900 cursor-pointer flex items-center gap-1.5"
                       >
-                        <span>📑 Add Session PDF &amp; Material (+₹400)</span>
+                        <span>🎁 I Want Resource ToolKit worth of ₹10,000 (+₹400)</span>
                       </label>
                       <span className="text-[10px] font-black text-blue-700 bg-blue-100/90 border border-blue-200 px-2 py-0.5 rounded-md">
                         Total ₹499
                       </span>
                     </div>
-                    <p className="text-[11px] text-slate-600 mt-0.5 leading-snug">
-                      Get 150+ 3D Logo &amp; AI Video Prompts PDF, Avatar Lip-Sync Blueprints &amp; Complete Session Material sent to your email.
-                    </p>
+                    <ul className="mt-1.5 space-y-0.5 text-[11px] text-slate-700 font-medium">
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-blue-600 font-bold">•</span>
+                        <span>1. Session PDF Material</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-blue-600 font-bold">•</span>
+                        <span>2. 100+ AI Skills</span>
+                      </li>
+                      <li className="flex items-center gap-1.5">
+                        <span className="text-blue-600 font-bold">•</span>
+                        <span>3. Content creation Prompts</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-              </div>
-
-              {/* Compact GST & Total Summary Row */}
-              <div className="rounded-xl bg-slate-50 border border-slate-200 px-3.5 py-2 flex items-center justify-between text-xs">
-                <div className="text-left">
-                  <span className="font-bold text-slate-800 block">
-                    Total Payable (Incl. 18% GST)
-                  </span>
-                  <span className="text-[10px] text-slate-500">
-                    Base ₹{accounting.base.toFixed(2)} + GST ₹{accounting.gstTotal.toFixed(2)} • SAC 999293
-                  </span>
-                </div>
-                <span className="text-base sm:text-lg font-black text-blue-600 font-mono">
-                  ₹{totalAmount}.00
-                </span>
               </div>
 
               <div className="flex items-start gap-2 ml-0.5 text-left">
