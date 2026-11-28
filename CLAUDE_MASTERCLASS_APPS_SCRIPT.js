@@ -5,10 +5,25 @@
  * ============================================================================
  */
 
-const DEFAULT_SPREADSHEET_ID = "1JA3FZf8xkpZ8GjuYiETXz9R0ivfW8O_rf3PZIzQum9g";
+const DEFAULT_SPREADSHEET_ID = "1JA3FZf8xkpZ8GjuYiETXz9R0ivfW80-rf3PZIzQum9g";
 const SPREADSHEET_ID = null;
 const SHEET_NAME_REG = "Sheet1";
 const SHEET_NAME_LOGS = "Logs";
+const SHEET_NAME_LANDING_LEADS = "Landing_Leads";
+const LANDING_LEAD_HEADERS = [
+  "Timestamp",
+  "Lead ID",
+  "Full Name",
+  "Phone",
+  "Email",
+  "Page URL",
+  "UTM Source",
+  "UTM Medium",
+  "UTM Campaign",
+  "GCLID",
+  "FBCLID",
+  "User Agent"
+];
 const EXPECTED_PRODUCT_KEY = "claude_masterclass";
 
 function getScriptSecret(key) {
@@ -358,6 +373,13 @@ function doGet(e) {
     return ContentService.createTextOutput(params['hub.challenge']);
   }
 
+  if (params.action === 'getLandingLeads') {
+    if (verifyToken && params.token && params.token !== verifyToken) {
+      return createJsonResponse({ success: false, error: 'Unauthorized token' });
+    }
+    return createJsonResponse({ success: true, leads: getLandingLeads() });
+  }
+
   if (params.action === 'getVerifiedInvoice') {
     const ss = getClaudeSpreadsheet();
     const sheet = ss.getSheetByName(SHEET_NAME_REG) || ss.getSheets()[0];
@@ -441,6 +463,10 @@ function doPost(e) {
   try {
     const body = JSON.parse(rawData);
 
+    if (body.action === "saveLandingLead") {
+      return createJsonResponse(saveLandingLead(body));
+    }
+
     if (body.action === "getVerifiedInvoice") {
       const ss = getClaudeSpreadsheet();
       const sheet = ss.getSheetByName(SHEET_NAME_REG) || ss.getSheets()[0];
@@ -481,6 +507,11 @@ function doPost(e) {
       if (!isClaudeRegistration(body)) return createJsonResponse({ success: false, message: "Ignored non-Claude lead" });
       const orderId = createRazorpayOrder(body);
       saveToSheet(body, orderId);
+      try {
+        saveLandingLeadFromRegistration(body, orderId);
+      } catch (errLead) {
+        writeToLogs("LEAD_SAVE_WARN", errLead.message);
+      }
       return createJsonResponse({ success: true, orderId: orderId });
     }
 
@@ -576,18 +607,12 @@ const TOTAL_TO_EXACT_BASE_MAP = {
 };
 
 function getInvoiceAccountingBreakdown(totalAmount) {
-  const total = Math.max(1, Math.round(Number(totalAmount) || 117));
+  const total = Math.max(1, Math.round(Number(totalAmount) || 0));
   if (total === 1) {
     return { isTest: true, baseAmt: 1, cgst: 0, sgst: 0, totalGst: 0, roundOff: 0, total: 1 };
   }
-  const baseAmt = TOTAL_TO_EXACT_BASE_MAP[total] !== undefined
-    ? TOTAL_TO_EXACT_BASE_MAP[total]
-    : Math.round((total / 1.18) * 100) / 100;
-  const cgst = Math.round(baseAmt * 0.09 * 100) / 100;
-  const sgst = Math.round(baseAmt * 0.09 * 100) / 100;
-  const totalGst = Math.round((cgst + sgst) * 100) / 100;
-  const roundOff = Math.round((total - (baseAmt + totalGst)) * 100) / 100;
-  return { isTest: false, baseAmt: baseAmt, cgst: cgst, sgst: sgst, totalGst: totalGst, roundOff: roundOff, total: total };
+  // Claude Masterclass: Flat pricing without GST (0% GST)
+  return { isTest: false, baseAmt: total, cgst: 0, sgst: 0, totalGst: 0, roundOff: 0, total: total };
 }
 
 function numberToIndianRupeesWords(amount) {
@@ -2215,3 +2240,154 @@ function menuReconcileStuckPayments() {
   const res = reconcilePendingPayments();
   ui.alert("Reconciliation Complete", "Checked all rows. Resolved and sent invoices to " + (res.resolvedCount || 0) + " student(s).", ui.ButtonSet.OK);
 }
+
+
+// -----------------------------------------------------------------------
+// LANDING GATE LEADS (Popup Enquiry Leads)
+// -----------------------------------------------------------------------
+function getLandingLeadsSheet(ss) {
+  let sheet = ss.getSheetByName(SHEET_NAME_LANDING_LEADS);
+  if (!sheet) {
+    sheet = ss.insertSheet(SHEET_NAME_LANDING_LEADS);
+  }
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(LANDING_LEAD_HEADERS);
+    sheet.setFrozenRows(1);
+    const headerRange = sheet.getRange(1, 1, 1, LANDING_LEAD_HEADERS.length);
+    headerRange.setBackground("#0f172a");
+    headerRange.setFontColor("#ffffff");
+    headerRange.setFontWeight("bold");
+    headerRange.setFontSize(10);
+  }
+  return sheet;
+}
+
+function validateLandingLead(data) {
+  const name = String(data.name || "").replace(/\s+/g, " ").trim();
+  const phone = String(data.phone || "").replace(/[^\d+]/g, "");
+  const email = String(data.email || "").trim().toLowerCase();
+  const phoneDigits = phone.replace(/\D/g, "");
+
+  if (name.length < 2 || name.length > 100) {
+    return { valid: false, error: "Please enter your full name." };
+  }
+  if (phoneDigits.length < 7 || phoneDigits.length > 15) {
+    return { valid: false, error: "Please enter a valid phone number." };
+  }
+  if (email && (email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))) {
+    return { valid: false, error: "Please enter a valid email address." };
+  }
+  return { valid: true, name: name, phone: phone, email: email };
+}
+
+function saveLandingLead(data) {
+  // Safe fallback if manually executed from Apps Script Editor "Run" button
+  if (!data || typeof data !== "object") {
+    data = {
+      name: "Test Visitor (Editor Run)",
+      phone: "+919876543210",
+      email: "test@techtycoon.in",
+      pageUrl: "https://course.techtycoon.in/claude_masterclass/#online",
+      source: "editor_manual_run"
+    };
+  }
+
+  // Honeypot check
+  if (data.website) {
+    writeToLogs("LANDING_LEAD_BOT_REJECT", "Honeypot field filled");
+    return { success: false, error: "Submission rejected." };
+  }
+
+  const check = validateLandingLead(data);
+  if (!check.valid) {
+    return { success: false, error: check.error };
+  }
+
+  const lock = LockService.getScriptLock();
+  try {
+    lock.waitLock(10000);
+    const ss = getClaudeSpreadsheet();
+    const sheet = getLandingLeadsSheet(ss);
+    const utm = data.utm || {};
+    const leadId = "lead_" + Utilities.getUuid().replace(/-/g, "").substring(0, 16);
+    sheet.appendRow([
+      new Date(),
+      leadId,
+      sanitizeCell(check.name),
+      "'" + check.phone,
+      sanitizeCell(check.email),
+      sanitizeCell(String(data.pageUrl || "").substring(0, 500)),
+      sanitizeCell(String(utm.utm_source || data.source || "").substring(0, 100)),
+      sanitizeCell(String(utm.utm_medium || "").substring(0, 100)),
+      sanitizeCell(String(utm.utm_campaign || "").substring(0, 150)),
+      sanitizeCell(String(utm.gclid || "").substring(0, 200)),
+      sanitizeCell(String(utm.fbclid || "").substring(0, 200)),
+      sanitizeCell(String(data.userAgent || "").substring(0, 300))
+    ]);
+    SpreadsheetApp.flush();
+    return { success: true, leadId: leadId };
+  } catch (err) {
+    writeToLogs("LANDING_LEAD_ERROR", err.message);
+    return { success: false, error: "Could not save your details. Please try again." };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+function getLandingLeads() {
+  const ss = getClaudeSpreadsheet();
+  const sheet = ss.getSheetByName(SHEET_NAME_LANDING_LEADS);
+  if (!sheet) return [];
+  const values = sheet.getDataRange().getValues();
+  const list = [];
+  for (let i = 1; i < values.length; i++) {
+    const row = values[i];
+    list.push({
+      timestamp: row[0] instanceof Date ? row[0].toISOString() : row[0],
+      leadId: row[1],
+      name: row[2],
+      phone: String(row[3] || "").replace(/^'/, ""),
+      email: row[4],
+      pageUrl: row[5],
+      utmSource: row[6],
+      utmMedium: row[7],
+      utmCampaign: row[8],
+      gclid: row[9],
+      fbclid: row[10],
+      userAgent: row[11]
+    });
+  }
+  return list.reverse();
+}
+
+
+
+function testSaveLandingLead() {
+  const res = saveLandingLead();
+  Logger.log("Result: " + JSON.stringify(res));
+}
+
+
+function saveLandingLeadFromRegistration(data, orderId) {
+  const ss = getClaudeSpreadsheet();
+  const sheet = getLandingLeadsSheet(ss);
+  const utm = data.utm || {};
+  const cleanPhone = String(data.phone || "").replace(/[^\d+]/g, "");
+  
+  sheet.appendRow([
+    new Date(),
+    orderId || ("lead_" + Utilities.getUuid().replace(/-/g, "").substring(0, 16)),
+    sanitizeCell(data.name || ""),
+    "'" + cleanPhone,
+    sanitizeCell(data.email || ""),
+    sanitizeCell(String(data.pageUrl || "https://course.techtycoon.in/claude_masterclass/#online").substring(0, 500)),
+    sanitizeCell(String(utm.utm_source || data.source || data.promoCode || "register_now_modal").substring(0, 100)),
+    sanitizeCell(String(utm.utm_medium || data.profession || "").substring(0, 100)),
+    sanitizeCell(String(utm.utm_campaign || data.modeOfSession || "Online").substring(0, 150)),
+    sanitizeCell(String(utm.gclid || "").substring(0, 200)),
+    sanitizeCell(String(utm.fbclid || "").substring(0, 200)),
+    sanitizeCell(String(data.userAgent || "Register Now Modal").substring(0, 300))
+  ]);
+  SpreadsheetApp.flush();
+}
+
