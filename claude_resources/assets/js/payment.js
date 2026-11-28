@@ -28,6 +28,45 @@
 
   var currentPayable = DISCOUNTED_PRICE;
   var currentCouponApplied = true;
+  var currentCountryIso = 'IN';
+  var leadFiredThisVisit = false;
+  var firedPurchaseIds = {};
+
+  function applyMetaAdvancedMatching(name, email, fullPhone, countryIso) {
+    try {
+      if (typeof window.fbq !== 'function') return;
+      var userData = {};
+      var cleanEmail = String(email || '').trim().toLowerCase();
+      var cleanPhone = String(fullPhone || '').replace(/\D/g, '');
+      var parts = String(name || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+      var cleanCountry = String(countryIso || '').trim().toLowerCase();
+
+      if (cleanEmail) userData.em = cleanEmail;
+      if (cleanPhone) userData.ph = cleanPhone;
+      if (parts.length > 0) userData.fn = parts[0];
+      if (parts.length > 1) userData.ln = parts.slice(1).join(' ');
+      if (cleanCountry) userData.country = cleanCountry;
+
+      if (Object.keys(userData).length > 0) {
+        window.fbq('init', '1077721348415196', userData);
+      }
+    } catch (e) {
+      // Never let analytics/pixel blockers interfere with checkout
+    }
+  }
+
+  function trackMetaEvent(eventName, params, opts) {
+    try {
+      if (typeof window.fbq !== 'function') return;
+      if (opts && opts.eventID) {
+        window.fbq('track', eventName, params || {}, { eventID: String(opts.eventID) });
+      } else {
+        window.fbq('track', eventName, params || {});
+      }
+    } catch (e) {
+      // Never let analytics/pixel blockers interfere with checkout
+    }
+  }
 
   // DOM Elements - Registration Dialog
   var regDialog = document.getElementById('reg-dialog');
@@ -257,6 +296,7 @@
 
     function selectCountry(c) {
       selectedIso = c.iso;
+      currentCountryIso = c.iso || 'IN';
       regCountryCode.value = c.code;
       if (flagEl) flagEl.textContent = c.flag;
       if (codeEl) codeEl.textContent = c.code;
@@ -611,6 +651,16 @@
       var addonText = isAddonSelected ? 'Yes - ChatGPT Hacks (+₹400)' : 'No';
       var productName = isAddonSelected ? 'Ultimate Claude Skills + ChatGPT Hacks Bundle' : 'Ultimate Claude Skills';
 
+      applyMetaAdvancedMatching(nameVal, emailVal, fullPhone, currentCountryIso);
+
+      if (!leadFiredThisVisit) {
+        leadFiredThisVisit = true;
+        trackMetaEvent('Lead', {
+          content_name: productName,
+          content_category: 'Claude Resources'
+        });
+      }
+
       // Set button to loading
       regSubmitBtn.disabled = true;
       regSubmitBtn.innerHTML = '<span class="pay-spinner" style="width:16px;height:16px;border-width:2px;display:inline-block;vertical-align:middle;margin-right:8px;"></span> Connecting to Payment...';
@@ -656,11 +706,14 @@
           ? result.razorpayKeyId
           : (isIntl ? (C.razorpayKeyIntl || 'rzp_live_gfoS1OjC8tvWjP') : (C.razorpayKeyIn || 'rzp_live_T2CbVONQc6qrqj'));
 
+        var paidAmount = Number(currentPayable);
+        var orderCurrency = (result && result.currency) || 'INR';
+
         var rzpOptions = {
           key: rzpKey,
           order_id: result.orderId,
-          amount: currentPayable * 100, // paise
-          currency: 'INR',
+          amount: Math.round(paidAmount * 100), // paise
+          currency: orderCurrency,
           name: 'TechTycoon',
           description: (isAddonSelected ? 'Claude Skills + ChatGPT Hacks' : '250+ Ultimate Claude Skills'),
           image: 'https://course.techtycoon.in/claude_resources/assets/img/logo-techtycoon.png',
@@ -673,7 +726,7 @@
             product: 'claude_resources',
             coupon: appliedCouponText,
             addon: addonText,
-            paid_price: String(currentPayable)
+            paid_price: String(paidAmount)
           },
           theme: {
             color: '#FF7A47'
@@ -682,6 +735,25 @@
             var paymentId = response.razorpay_payment_id || '';
             var orderId = response.razorpay_order_id || result.orderId || '';
             var signature = response.razorpay_signature || '';
+
+            // Fire Meta Pixel Purchase once per paymentId (never on failed/cancelled/pending)
+            if (paymentId) {
+              var purchaseKey = 'meta_purchase_' + paymentId;
+              var alreadyFired = !!firedPurchaseIds[paymentId];
+              if (!alreadyFired) {
+                try { alreadyFired = !!window.sessionStorage.getItem(purchaseKey); } catch (e) {}
+              }
+              if (!alreadyFired) {
+                firedPurchaseIds[paymentId] = true;
+                try { window.sessionStorage.setItem(purchaseKey, '1'); } catch (e) {}
+                trackMetaEvent('Purchase', {
+                  value: paidAmount,
+                  currency: orderCurrency,
+                  content_name: productName,
+                  content_type: 'product'
+                }, { eventID: paymentId });
+              }
+            }
 
             var successPayload = JSON.stringify({
               paymentSuccess: true,
